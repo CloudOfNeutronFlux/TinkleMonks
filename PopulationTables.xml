@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<populations>
+
+	<population Name="StartingGear_TinkleMonk">
+		<group Name="Items" Style="pickeach">
+			<table Name="StartingGear_Common"/>
+			<object Blueprint="HalfFullCanteen" Number="2"/>
+			<object Blueprint="HalfFullWaterskin" Number="1"/>
+			<object Blueprint="Woven Tunic" Number="1"/>
+			<object Blueprint="Leather Cloak" Number="1"/>
+			<object Blueprint="Leather Boots" Number="1"/>
+			<object Blueprint="keytar" Number="1"/>
+			<object Blueprint="Fish Jerky" Number="2-3"/>
+		</group>
+	</population>
+</populations>

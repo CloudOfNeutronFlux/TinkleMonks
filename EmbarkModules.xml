@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<embarkmodules>
+
+  <module Class="XRL.CharacterBuilds.Qud.QudPregenModule">
+    <pregens>
+      
+      <pregen Name="{{watery|Pluna Freyk}}" Genotype="Mutated Human" Tile="Creatures/funkbird.png" Foreground="B" Detail="Y" Background="k">
+        <code>H4sIAAAAAAAAC81X32vbMBB+L/R/EGaPbkhD2LpBHpKsWbc1kCWhG4w+yPZhi8iSkaUGL/X/vpPzy04gyTZmHAi27jvdff50Psmr6ytCnJDG8AIqZVI4H4jTabVbnXandffOcQvcM4wHJYdbdGhvsFgGhkOK5p92TMhqfdlB8ywBO+nH9LE1jKiivgY1sBHT1jcT2L81a3QbFxNc0k9TiD2e3QxniCQueVrn7u2ZuWRouDYKegKMVpS7ZGI8zvyvkM3lAkRPGM7XHAsyAdUUaezYoemNPk2tSusjBjiitk+A8bbhJgpCEBXoSLwtlq9vcvevxfsEQjZQvCqt8+Jt/W3IsdFUQ0AeTExr03G9ag1TsUzqvIabwsNwq9USFVTZ64QbQclIQbbI87qknBmvgRVZYXVezI27DThnYsHhZizFoi4Ji1cAY6cNE/GA13kZ4wSjtcuWFDj4RYz9prH+rcoDsukDG4EHQCviFw5DaYRG9PYQeKKK0QJql5HcvTTdiNOYiZBMaVZj1gepUJX68s0j5i/IyKgacw4gxGpCbet8Tiy5hOqozrW8f2GczJdM/HvO/eC5pvbT11oxz2hoWv85JHbBpiiZ0OnEKD+iKQTVfLbPawUi1BEC3cqCOP0Q61RnCNxVgbk0YSQgtQ3sbRX6LDRwznAb9uF44nfGeSKXoI6h+1Ci8f3eVq40hyazBIrKuOl2q8AUYsqEfZ8O+qyHj9u33bc64z9WzdCkWsbsF+zwhlXPKZLnK0ngZ9KFh6sE7Fo5msaeNIoJCCmv6+gwjKRMYabx4wWr4lH6RUtq2EqcInnB2exgnk30RSYJ/TON7eX5+ir/DaXigegGDwAA</code>
+        <description>
+&amp;c&#249;&amp;y Keytar-wielding Tinkle-Monk
+&amp;c&#249;&amp;y Set your adversaries alight with your fire solos!
+&amp;c&#249;&amp;y FUNK OVERLOAD !!
+        </description>
+      </pregen>
+    </pregens>
+  </module>
+</embarkmodules>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<subtypes>
+
+ 	<class ID="Callings" Load="Merge">
+		<subtype Name="Tinkle-Monk" Code="nfm" Gear="StartingGear_TinkleMonk" Tile="Creatures/tinklemonk.png" DetailColor="B">
+			<stat Name="Ego" Bonus="1"/>
+			<stat Name="Willpower" Bonus="1"/>
+			<skills>
+				<skill Name="Persuasion_InspiringPresence"/>
+				<skill Name="Cudgel"/>
+				<skill Name="Discipline"/>
+			</skills>
+			<extrainfo>FUNK OVERLOAD!!</extrainfo>
+		</subtype>
+	</class>
+</subtypes>

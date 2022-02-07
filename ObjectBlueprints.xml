@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+
+	<!-- ACTORSESES -->
+
+	<object Name="FunkDummy" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="FunkDummy" Tile="creatures/birdtaur.png" ColorString="&amp;r" DetailColor="w"/>
+		<part Name="Brain" Hostile="False" Wanders="False" Factions="Joppa-100"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+
+
+	<!-- UNIQUE ACTORSESES -->
+
+	<object Name="tambourinegal" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="{{rubbergum|Tambourine}} {{rubbergum|Gal}}" Tile="creatures/tambourinegal.png" ColorString="&amp;W" DetailColor="Y"/>
+		
+		<!-- Stats and Description -->
+		<stat Name="Level" Value="1"/>
+		<stat Name="Strength" sValue="10"/>
+		<stat Name="Agility" sValue="19"/>
+		<stat Name="Toughness" sValue="16"/>
+		<stat Name="Intelligence" sValue="16"/>
+		<stat Name="Willpower" sValue="18"/>
+		<stat Name="Ego" sValue="21"/>
+		<stat Name="Hitpoints" sValue="30"/>
+		<part Name="Brain" Hostile="False" Factions="Playerneutral-100" MaxKillRadius="5"/>
+		<part Name="AISelfPreservation" Threshold="35"/>
+		<part Name="Description" Short="Through salt and dust, the tinkle-monk's spirit lights the path for friends and comrades. =pronouns.Possessive= voice bends melodies into magnificent and colorful shapes, while =pronouns.possessive= hands weave whispering rhythms through motions of jingle-rings."/>
+		<part Name="ConversationScript" ConversationID="TambourineGalConvo"/>
+
+		<!-- Mutations -->
+		<mutation Name="Precognition" Level="1"/>
+		<mutation Name="Telepathy"/>
+		<mutation Name="LightManipulation" Level="1"/>
+
+		<!-- Skills -->
+		<skill Name="Cudgel"/>
+		<skill Name="Cudgel_Expertise"/>
+		<skill Name="Cudgel_Bludgeon"/>
+		<skill Name="Acrobatics"/>
+		<skill Name="Acrobatics_SwiftReflexes"/>
+		<skill Name="Acrobatics_Jump"/>
+
+		<!-- Inventory -->
+		<inventoryobject Blueprint="gal's hat" Number="1"/>
+		<inventoryobject Blueprint="swingdress" Number="1"/>
+		<inventoryobject Blueprint="tambourine" Number="2"/>
+		<inventoryobject Blueprint="Sandals" Number="1"/>
+
+		<!-- Other -->
+		<tag Name="Gender" Value="female"/>
+		<tag Name="Pet"/>
+		<tag Name="StartingPet"/>
+		<part Name="Pettable"/>
+		<tag Name="PetResponse" Value="smiles warmly and pets you back,laughs and pokes you in the side,gives you a wink"/>
+		<xtagGrammar Proper="true"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+
+
+
+	<!-- ITEMSES -->
+
+	<object Name="keytar" Inherits="BaseCudgel">
+		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
+		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
+		<part Name="Commerce" Value="410"/>
+		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
+		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="1d6" Skill="Cudgels"/>
+		<part Name="ElementalDamage" Damage="2d4+6" Attributes="Heat"/>
+		<tag Name="Tier" Value="6"/>
+		<tag Name="Hitsound" Value="meleeTier6"/>
+		<xtagGrammar Proper="true"/>
+	</object>
+
+	<object Name="tambourine" Inherits="BaseCudgel">
+		<part Name="Render" DisplayName="{{w|tambourine}}" Tile="items/tambourine.png" ColorString="&amp;w" DetailColor="Y"/>
+		<part Name="Description" Short="A circle of wood, metal jingles slotted into its frame with care and precision. As one moves their hand, the tambourine sings its rainy song."/>
+		<part Name="Commerce" Value="100"/>
+		<part Name="Physics" Weight="0" FlameTemperature="9999" VaporTemperature="9999"/>
+		<part Name="MeleeWeapon" MaxStrengthBonus="5" BaseDamage="1d4" Skill="Cudgels"/>
+		<part Name="ElementalDamage" Damage="2d4+4" Attributes="Cold"/>
+		<tag Name="Tier" Value="4"/>
+		<tag Name="Hitsound" Value="meleeTier4_4"/>
+		<tag Name="AlwaysEquipAsWeapon"/>
+		<xtagGrammar Proper="true"/>
+	</object>
+
+	<object Name="gal's hat" Inherits="BaseHat">
+		<part Name="Render" DisplayName="wide-brimmed hat" Tile="items/sw_hat.bmp" ColorString="&amp;W" DetailColor="Y"/>
+		<part Name="Description" Short="Sun or rain, this hat will protect its wearer from elements, and sometimes hostile intent."/>
+		<part Name="Commerce" Value="15"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="Armor" AV="0" DV="1" Heat="2" WornOn="Head"/>
+		<tag Name="AlwaysEquipAsArmor"/>
+		<tag Name="Tier" Value="2"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+
+	<object Name="swingdress" Inherits="BaseArmor">
+		<part Name="Render" DisplayName="swing dress" Tile="items/swingdress.png" ColorString="&amp;W" DetailColor="Y"/>
+		<part Name="Description" Short="This simple yet dashing dress flows in enthralling patterns with every motion of its wearer."/>
+		<part Name="Commerce" Value="15"/>
+		<part Name="Physics" Weight="2"/>
+		<part Name="Armor" AV="0" DV="2" Heat="4" WornOn="Body"/>
+		<tag Name="AlwaysEquipAsArmor"/>
+		<tag Name="Tier" Value="2"/>
+	</object>
+</objects>
