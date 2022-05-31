@@ -3,70 +3,24 @@
 
 	<!-- Tambourine Gal -->
 	<conversation ID="TambourineGalConvo">
-		
 		<!-- Start nodes -->
-		<!-- Quest starts -->
-		<start ID="Greet_Grave" IfHaveQuest="Grave Thoughts" IfNotFinishedQuest="Grave Thoughts">
+		<node ID="Start" IfHaveQuest="Grave Thoughts" IfNotFinishedQuest="Grave Thoughts">
 			<text>
 				{{C|This rumbling... We better hurry, friend.}}~
 				{{C|We need to hurry, =name=!}}~
-				{{C|Please, do as Otho says; we'll need to be ready.}}
+				{{C|Please, do as Otho says. I saw who was behind this quake: we'll need to be ready.}}
 			</text>
-			<choice Target="SongGrave1">*Ask =pronouns.objective= to sing a song of inspiration. You will need it.*</choice>
-			<choice ID="Trade">
-				<text>*Tell =pronouns.objective= you want to make some last-minute equipment adjustments.*</text>
-				<part Name="Trade"/>
-			</choice>
-			<choice Target="End">*Nod and move on.*</choice>
-		</start>
-		<start ID="Greet_Siege" IfHaveQuest="A Call to Arms" IfNotFinishedQuest="A Call to Arms" AllowEscape="false">
+			<choice GotoID="SongGrave1">*Ask =pronouns.objective= to sing a song of inspiration. You will need it.*</choice>
+			<choice GotoID="End">*Nod and move on.*</choice>
+		</node>
+		<node ID="Start" IfHaveQuest="A Call to Arms" IfNotFinishedQuest="A Call to Arms">
 			<text>
 				{{w|*=pronouns.Subjective= =verb:adjust:afterpronoun= =pronouns.possessive= hat and =verb:give:afterpronoun= you a firm nod.*}}
 			</text>
-			<choice Target="End">*Nod back. You're ready.*</choice>
-		</start>
-		<!-- Special starts -->
-		<start ID="Greet_BananaPhone" IfZoneName="Ezra" IfTime="550-700" IfNotHaveItem="Sun-Dried Banana">
+			<choice GotoID="End">*Nod back. You're ready.*</choice>
+		</node>
+		<node ID="Start">
 			<text>
-				{{C|Want a banana?}}
-
-				{{w|*The tinkle-monk =verb:extend:afterpronoun= =pronouns.possessive= arm towards you; there's a dried banana slice in =pronouns.possessive= palm.*}}
-			</text>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Nod and take the slice from =pronouns.possessive= hand.*</choice>
-			<choice Target="SongBanana">*Tell the tinkle-monk that you were hoping to hear one of =pronouns.possessive= songs instead.*</choice>
-			<choice Target="End">*You're not really in the mood for bananas right now. Thank the tinkle-monk and wish =pronouns.objective= to live and drink.*</choice>
-		</start>
-
-<!-- 		<start ID="Greet_BeyLah0" IfZoneName="Bey Lah" IfNotHaveActiveQuest="Find Eskhind" IfNotFinishedQuest="Kith and Kin">
-			<text>
-				{{C|This is strange. Hindren don't usually allow others to enter their village.}}~
-				{{C|I wonder why the scouts let us through. We should find the elder and ask what's going on, friend.}}~
-				{{w|*=pronouns.Subjective= =verb:look:afterpronoun= around, a bit startled.*}}
-
-				{{C|This is very unusual. I was never allowed into the village this easily.}}
-			</text>
-			<choice Target="End">*Nod and tell the tinkle-monk you'll see if you can figure out what's happening.*</choice>
-			<choice ID="Trade">
-				<text>*Nod and say that you want to go over your belongings before investigating anything.*</text>
-				<part Name="Trade"/>
-			</choice>
-		</start>
-		<start ID="Greet_BeyLah1" IfZoneName="Bey Lah" IfHaveActiveQuest="Find Eskhind">
-			<text IfNotFinishedQuestStep="Find Eskhind~Find Eskhind">
-				{{C|Can't say I liked the way the Hindriarch talked to us.}}
-			</text>
-			<choice Target="End" IfNotFinishedQuestStep="Find Eskhind~Find Eskhind">*Note that she was very particular about traditions of this village. Work is work, though, and maybe the exile will be less impolite.*</choice>
-			<choice ID="Trade" IfNotFinishedQuestStep="Find Eskhind~Find Eskhind">
-				<text>*Nod. There's a dangerous journey ahead of you, though, so you want to make sure both of you are prepared.*</text>
-				<part Name="Trade"/>
-			</choice>
-		</start> -->
-
-
-		<!-- General start -->
-		<start ID="Greet">
-			<!-- Morning-Day -->
-			<text IfTime="270-700">
 				{{C|Hey there!}}~
 				{{w|*=pronouns.Subjective= =verb:smile:afterpronoun= and =verb:wave:afterpronoun= at you.*}}~
 				{{C|How are you holding up, =name=?}}~
@@ -77,77 +31,25 @@
 				{{C|Ah! Sorry, I was thinking of a new song.}}~
 				{{C|Hey, =name=.}}
 			</text>
-			<!-- Evening -->
-			<text IfTime="700-900">
-				{{C|Ah, isn't it a lovely evening?}}~
-				{{C|Sun's going to set soon. Good thing I glow in the dark, right?}}~
-				{{w|*=pronouns.Subjective= =verb:give:afterpronoun= you a warm smile.*}}~
-				{{C|I'm thinking we should find a place to camp. We both could use some rest after all this walking}}~
-				{{w|*=pronouns.Subjective= quietly =verb:hum:afterpronoun= a melody. It sounds like a lullaby.*}}
-			</text>
-			<!-- Nighttime -->
-			<text IfTime="900-270">
-				{{C|Boo!}}
-
-				{{w|=pronouns.Subjective= =verb:giggle:afterpronoun=.}}~
-				{{C|Ah, look at the stars, =name=!}}~
-				{{C|Let's watch where we step, friend.}}~
-				{{C|I think the Moon's a little bit brighter tonight.}}
-			</text>
-			<!-- Zone-specific -->
-			<text IfZoneName="Joppa">
-				{{C|Ahh, I want apple matz...}}~
-				{{C|Did you see Ctesiphus anywhere? I have some treats for him.}}~
-				{{C|It's good to be here again.}}~
-				{{C|We should stay for a while. Folks here love when I sing for them.}}~
-				{{C|Want to go hunt for water striders, =name=?}}
-			</text>
-			<text IfZoneName="The Stiltgrounds">
-				{{C|Want to go shopping?}}~
-				{{C|Ah, so many folks here! It's wonderful!}}~
-				{{C|Haven't seen that one before... Oh, sorry, =name=, I was distracted.}}~
-				{{w|*=pronouns.Subjective= =verb:give:afterpronoun= you a wink.*}}
-			</text>
-			<!-- <text IfZoneName="Grit Gate" IfZoneLevel="0">
-				Waiting for Armi to add stratum recognition :binted:
-			</text> -->
-			<text IfZoneName="Ezra">
-				{{C|I wonder what Yla's up to these days.}}~
-				{{C|Let's stay a while longer, =name=. Ezra is mesmerizing.}}~
-				{{w|*=pronouns.Subjective= =verb:seem:afterpronoun= to be preoccupied, chewing a dried banana chip.*}}~
-				{{C|Oh, I think Sixshrew is grumbling again. You can't mistake xyr aura for anything else.}}
-			</text>
-			<text IfZoneName="Ezra" IfHaveItem="Sun-Dried Banana">
-				{{C|Want a banana? Oh, you already have one. Guess this one's mine, then!}}
-			</text>
-		</start>
-
+			<choice GotoID="Song">*Ask if =pronouns.subjective= could sing for you.*</choice>
+			<choice GotoID="End">*You should keep moving. Wish =pronouns.objective= to live and drink.*</choice>
+		</node>		
 		<!-- Song Nodes -->
-		<node ID="Song" AllowEscape="false">
+		<node ID="Song">
 			<text>
 				{{C|Of course, =name=! Close your eyes and listen closely...}}~
 				{{C|It would be my pleasure, friend. Close your eyes and listen...}}~
 				{{C|I was hoping you'd ask! Now, close your eyes and listen carefully...}}
 			</text>
-			<choice Target="Songs">*Do as =pronouns.subjective= =verb:say:afterpronoun=. Allow yourself to see the rythms and drown in the colorful melody...*</choice>
+			<choice GotoID="Songs">*Do as =pronouns.subjective= =verb:say:afterpronoun=. Allow yourself to see the rythms and drown in the colorful melody...*</choice>
 		</node>
-		<node ID="SongGrave1" AllowEscape="false">
+		<node ID="SongGrave1">
 			<text>
 				{{C|I... Yes, you're right. I'll need it, too. Close your eyes, friend.}}
 			</text>
-			<choice Target="SongGrave2">*Do as =pronouns.subjective= =verb:say:afterpronoun=. Concentrate on the rythm. Let the melody pierce your very being.*</choice>
+			<choice GotoID="SongGrave2">*Do as =pronouns.subjective= =verb:say:afterpronoun=. Concentrate on the rythm. Let the melody pierce your very being.*</choice>
 		</node>
-		<node ID="SongBanana" AllowEscape="false">
-			<text>
-				{{C|Your loss, friend.}}
-
-				{{w|=pronouns.Subjective= =verb:flick:afterpronoun= the banana chip into =pronouns.possessive= mouth and =verb:give:afterpronoun= you a wink.*}}
-
-				{{C|Alright, close your eyes!}}
-			</text>
-			<choice Target="SongBanana2">*Do as =pronouns.subjective= =verb:say:afterpronoun=. Allow yourself to be taken away by the colorful current of the song.*</choice>
-		</node>
-		<node ID="Songs" AllowEscape="false">
+		<node ID="Songs">
 			<text>
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a distant land, so far away from Qud: you see a sparkling white landscape, dotted by dark greens of quill-trees; a smudge of orange, where tribesfolk lit a campfire. 
 
@@ -158,52 +60,27 @@
 				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation.
 
 				A blade of one edge, imbued with secrets of the petal-smith, meant to be wielded by the beetle-masked.*}}~
-				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by the splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
+				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by by splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
 
 				Perhaps you will.*}}
 			</text>
-			<choice Target="SongsEnd">*Open your eyes.*</choice>
+			<choice GotoID="SongsEnd">*Open your eyes.*</choice>
 		</node>
-		<node ID="SongsEnd" AllowEscape="false">
+		<node ID="SongsEnd">
 			<text>
 				{{w|*=pronouns.Subjective= =verb:give:afterpronoun= you a warm smile and =verb:nod:afterpronoun=.*}}
 
 				{{C|I hope you liked it.}}
 			</text>
-			<choice Target="End">*Though the song still lingers in your mind, it's time to move on. Express your gratitude for the tinkle-monk's work and wish =pronouns.objective= to live and drink.*</choice>
+			<choice GotoID="End">*Though the song still lingers in your mind, it's time to move on. Express your gratitude for the tinkle-monk's work and wish =pronouns.objective= to live and drink.*</choice>
 		</node>
-		<node ID="SongBanana2" AllowEscape="false">
-			<text>
-				{{C|*Ribbons of yellow snake their way from above you, curling around your being before retreating into the pinkish mist. Their trails reveal a shpae to you: vibrantly yellow, slightly curved, with a rought stem atop of it. There's an aroma in the air that's somehow familiar to you.
-
-				The shape rings. You pause to ask yourself: "What's a phone?"*}}
-			</text>
-			<choice Target="SongBananaEnd">*Open your eyes.*</choice>
-		</node>
-		<node ID="SongBananaEnd" AllowEscape="false">
-			<text>
-				{{w|*The tinkle-monk barely holds =pronouns.reflexive= together, giggles treacherously seeping through =pronouns.possessive= smile. =pronouns.Possessive= palm is open before you, holding a banana chip.*}}
-
-				{{C|So... Want a banana?}}
-			</text>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Chuckle and take the chip.*</choice>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Sigh and take the chip.*</choice>
-			<choice Target="End">*Thank the tinkle-monk for the curious song, but don't take the chip. Maybe some other time.*</choice>
-		</node>
-		<node ID="SongGrave2" AllowEscape="false">
+		<node ID="SongGrave2">
 			<text>
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a battle in a black sea. A beam of pure white light punches through the triangular-patterned barrier. The collosal prism is breached, and as it shatters, the beam splits into six colorful stripes.
 
 				This fight is all they know that's right.*}}
 			</text>
-			<choice Target="End">*Open your eyes. Nod to the tinkle-monk. It's time.*</choice>
+			<choice GotoID="End">*Open your eyes. Nod to the tinkle-monk. It's time.*</choice>
 		</node>
-		<!-- Distributed choices -->
-		<choice Target="Song" Distribute="Greet" Qualifier="ID">*Ask if =pronouns.subjective= could sing for you.*</choice>
-		<choice ID="Trade" Distribute="Greet" Qualifier="ID" Ordinal="990">
-			<text>*Tell =pronouns.objective= you want to go over your belongings.*</text>
-			<part Name="Trade"/>
-		</choice>
-		<choice Target="End" Distribute="Greet" Qualifier="ID">*You should keep moving. Wish =pronouns.objective= to live and drink.*</choice>
 	</conversation>
 </conversations>

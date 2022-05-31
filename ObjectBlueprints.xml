@@ -66,14 +66,10 @@
 	<object Name="keytar" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
 		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
-		<part Name="Commerce" Value="450"/>
+		<part Name="Commerce" Value="410"/>
 		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
-		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="1d6" Skill="Cudgels" Stat="Ego"/>
-		<part Name="MissileWeapon" Skill="Rifle" AmmoChar="&amp;C&#15;" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="2"/>
-		<part Name="EnergyAmmoLoader" ChargeUse="100" ProjectileObject="ProjectileLaserRifle" />
-    	<part Name="EnergyCellSocket" SlotType="EnergyCell" />
+		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="1d6" Skill="Cudgels"/>
 		<part Name="ElementalDamage" Damage="2d4+6" Attributes="Heat"/>
-		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
 		<tag Name="Tier" Value="6"/>
 		<tag Name="Hitsound" Value="meleeTier6"/>
 		<xtagGrammar Proper="true"/>
