@@ -4,7 +4,7 @@
 
 	<!-- ACTORSESES -->
 
-	<object Name="FunkDummy" Inherits="BaseHumanoid">
+	<object Name="clau_FunkDummy" Inherits="BaseHumanoid">
 		<part Name="Render" DisplayName="FunkDummy" Tile="creatures/birdtaur.png" ColorString="&amp;r" DetailColor="w"/>
 		<part Name="Brain" Hostile="False" Wanders="False" Factions="Joppa-100"/>
 		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
@@ -13,7 +13,7 @@
 
 	<!-- UNIQUE ACTORSESES -->
 
-	<object Name="tambourinegal" Inherits="BaseHumanoid">
+	<object Name="clau_tambourinegal" Inherits="BaseHumanoid">
 		<part Name="Render" DisplayName="{{rubbergum|Tambourine}} {{rubbergum|Gal}}" Tile="creatures/tambourinegal.png" ColorString="&amp;W" DetailColor="Y"/>
 		
 		<!-- Stats and Description -->
@@ -44,9 +44,9 @@
 		<skill Name="Acrobatics_Jump"/>
 
 		<!-- Inventory -->
-		<inventoryobject Blueprint="gal's hat" Number="1"/>
-		<inventoryobject Blueprint="swingdress" Number="1"/>
-		<inventoryobject Blueprint="tambourine" Number="2"/>
+		<inventoryobject Blueprint="clau_gal's hat" Number="1"/>
+		<inventoryobject Blueprint="clau_swingdress" Number="1"/>
+		<inventoryobject Blueprint="clau_tambourine" Number="2"/>
 		<inventoryobject Blueprint="Sandals" Number="1"/>
 
 		<!-- Other -->
@@ -63,23 +63,29 @@
 
 	<!-- ITEMSES -->
 
-	<object Name="keytar" Inherits="BaseCudgel">
+	<object Name="clau_keytar" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
 		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
-		<part Name="Commerce" Value="450"/>
+		<part Name="Commerce" Value="120"/>
 		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
-		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="1d6" Skill="Cudgels" Stat="Ego"/>
-		<part Name="MissileWeapon" Skill="Rifle" AmmoChar="&amp;C&#15;" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="2"/>
-		<part Name="EnergyAmmoLoader" ChargeUse="100" ProjectileObject="ProjectileLaserRifle" />
-    	<part Name="EnergyCellSocket" SlotType="EnergyCell" />
-		<part Name="ElementalDamage" Damage="2d4+6" Attributes="Heat"/>
+		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgels" Stat="Ego"/>
+		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" bShowShotsPerAction="false" NoWildFire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
+		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="ProjectileFlamethrower" />
+    	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
+		<part Name="ElementalDamage" Damage="2d6" Attributes="Heat"/>
+		<part Name="Examiner" AlternateDisplayName="strange case" Complexity="4"/>
+		<part Name="TinkerItem" Bits="0004" CanDissassemble="true" CanBuild="true"/>
+		<tag Name="TurretName" Value="{{chaotic|keytar}} turret"/>
+		<tag Name="Mods" Value="CdugelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
 		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
-		<tag Name="Tier" Value="6"/>
-		<tag Name="Hitsound" Value="meleeTier6"/>
+		<tag Name="Tier" Value="4"/>
+		<tag Name="Hitsound" Value="meleeTier4_4"/>
+		<tag Name="MissileFireSound" Value="flamethrower"/>
+		<tag Name="DynamicObjectTable:Guns"/>
 		<xtagGrammar Proper="true"/>
 	</object>
 
-	<object Name="tambourine" Inherits="BaseCudgel">
+	<object Name="clau_tambourine" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{w|tambourine}}" Tile="items/tambourine.png" ColorString="&amp;w" DetailColor="Y"/>
 		<part Name="Description" Short="A circle of wood, metal jingles slotted into its frame with care and precision. As one moves their hand, the tambourine sings its rainy song."/>
 		<part Name="Commerce" Value="100"/>
@@ -92,7 +98,7 @@
 		<xtagGrammar Proper="true"/>
 	</object>
 
-	<object Name="gal's hat" Inherits="BaseHat">
+	<object Name="clau_gal's hat" Inherits="BaseHat">
 		<part Name="Render" DisplayName="wide-brimmed hat" Tile="items/sw_hat.bmp" ColorString="&amp;W" DetailColor="Y"/>
 		<part Name="Description" Short="Sun or rain, this hat will protect its wearer from elements, and sometimes hostile intent."/>
 		<part Name="Commerce" Value="15"/>
@@ -103,7 +109,7 @@
 		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 
-	<object Name="swingdress" Inherits="BaseArmor">
+	<object Name="clau_swingdress" Inherits="BaseArmor">
 		<part Name="Render" DisplayName="swing dress" Tile="items/swingdress.png" ColorString="&amp;W" DetailColor="Y"/>
 		<part Name="Description" Short="This simple yet dashing dress flows in enthralling patterns with every motion of its wearer."/>
 		<part Name="Commerce" Value="15"/>

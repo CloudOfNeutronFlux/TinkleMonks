@@ -2,15 +2,18 @@
 <subtypes>
 
  	<class ID="Callings" Load="Merge">
-		<subtype Name="Tinkle-Monk" Code="nfm" Gear="StartingGear_TinkleMonk" Tile="Creatures/tinklemonk.png" DetailColor="B">
+		<subtype Name="Tinkle-Monk" Code="ctm" Gear="clau_StartingGear_TinkleMonk" Tile="Creatures/tinklemonk.png" DetailColor="B">
 			<stat Name="Ego" Bonus="1"/>
 			<stat Name="Willpower" Bonus="1"/>
 			<skills>
 				<skill Name="Persuasion_InspiringPresence"/>
 				<skill Name="Cudgel"/>
+				<skill Name="HeavyWeapons_Tank"/>
 				<skill Name="Discipline"/>
 			</skills>
-			<extrainfo>FUNK OVERLOAD!!</extrainfo>
+			<reputations>
+				<reputation With="Birds" Value="100"/>
+			</reputations>
 		</subtype>
 	</class>
 </subtypes>

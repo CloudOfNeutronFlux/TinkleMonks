@@ -108,7 +108,7 @@
 				{{C|Haven't seen that one before... Oh, sorry, =name=, I was distracted.}}~
 				{{w|*=pronouns.Subjective= =verb:give:afterpronoun= you a wink.*}}
 			</text>
-			<!-- <text IfZoneName="Grit Gate" IfZoneLevel="0">
+			<!-- <text IfZoneName="Grit Gate" IfZoneLevel="10">
 				Waiting for Armi to add stratum recognition :binted:
 			</text> -->
 			<text IfZoneName="Ezra">
@@ -155,12 +155,15 @@
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a festival. Reds, yellows and oranges are all around you, swirling like vortices — so easy to lose yourself here. Laughter and banter, trade and barter. Hidden by a scarlet shawl, a watchful gaze peers vigilantly over all and every.
 
 				Ah, it's a Stilt song.*}}~
-				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation.
+				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation: a blade of one edge, imbued with secrets of the petal-smith. A Petal stands close, enchanted by the troll-smith's craft. 
 
-				A blade of one edge, imbued with secrets of the petal-smith, meant to be wielded by the beetle-masked.*}}~
+				One day, this will become her craft, too.*}}~
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by the splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
 
-				Perhaps you will.*}}
+				Perhaps you will.*}}~
+				{{C|*A blur of blues and whites engulfes you. With deafening force it pulls you downward, but your mind is elsewhere, your vengeful gaze locked onto a blimp of grey high above you: a sky strider. There's but a single thought in your mind.
+
+				The Knights will pay.*}}
 			</text>
 			<choice Target="SongsEnd">*Open your eyes.*</choice>
 		</node>

@@ -1,8 +1,8 @@
 {
     "id": "clau_tinklemonks",
-    "title": "Tinkle-monks",
-    "author": "Clau",
-    "version": "1.0",
+    "title": "{{watery|Tinkle-monks}}",
+    "author": "{{entropic|Clau}",
+    "version": "0.2",
     "description": "Funky Smackdowns",
     "tags": "Stable,Item,Weapon,Subtype,Pet",
     "previewImage": "preview.png"
