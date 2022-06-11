@@ -63,6 +63,7 @@
 
 	<!-- ITEMSES -->
 
+	<!-- WEAPONS -->
 	<object Name="clau_keytar" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
 		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
@@ -98,6 +99,19 @@
 		<xtagGrammar Proper="true"/>
 	</object>
 
+	<object Name="clau_drumstick" Inherits="Item">
+		<part Name="Render" DisplayName="drumstick" Tile="items/sw_throwing_axe.bmp" ColorString="&amp;w" DetailColor="y" Occluding="false"/>
+		<part Name="Description" Short="A deceptively simple wooden stick, designed to be an instrument of both music and war."/>
+		<part Name="Commerce" Value="5"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="ThrownWeapon" Damage="1d6" Penetration="9"/>
+		<part Name="Examiner" AlternateDisplayName="a stick" Complexity="1"/>
+		<part Name="TinkerItem" Bits="00" CanDissassemble="true" CanBuild="true"/>
+		<tag Name="Mods" Value="CommonMods,ThrownWeaponMods"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+
+	<!-- ARMOR -->
 	<object Name="clau_gal's hat" Inherits="BaseHat">
 		<part Name="Render" DisplayName="wide-brimmed hat" Tile="items/sw_hat.bmp" ColorString="&amp;W" DetailColor="Y"/>
 		<part Name="Description" Short="Sun or rain, this hat will protect its wearer from elements, and sometimes hostile intent."/>
