@@ -26,15 +26,23 @@
 			<choice Target="End">*Nod back. You're ready.*</choice>
 		</start>
 		<!-- Special starts -->
-		<start ID="Greet_BananaPhone" IfZoneName="Ezra" IfTime="550-700" IfNotHaveItem="Sun-Dried Banana">
+		<start ID="Greet_BananaPhone" IfZoneName="Ezra" IfTime="550-700" IfNotHaveQuest="Occurance! Banana Phone">
 			<text>
 				{{C|Want a banana?}}
 
 				{{w|*The tinkle-monk =verb:extend:afterpronoun= =pronouns.possessive= arm towards you; there's a dried banana slice in =pronouns.possessive= palm.*}}
 			</text>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Nod and take the slice from =pronouns.possessive= hand.*</choice>
+			<choice GotoID="End" GiveItem="Sun-Dried Banana">
+				<text>*Nod and take the slice from =pronouns.possessive= hand.*
+				</text>
+				<part Name="QuestHandler" QuestID="Occurance! Banana Phone" Action="Complete"/>
+			</choice>
 			<choice Target="SongBanana">*Tell the tinkle-monk that you were hoping to hear one of =pronouns.possessive= songs instead.*</choice>
-			<choice Target="End">*You're not really in the mood for bananas right now. Thank the tinkle-monk and wish =pronouns.objective= to live and drink.*</choice>
+			<choice GotoID="End">
+				<text>*You're not really in the mood for bananas right now. Thank the tinkle-monk and wish =pronouns.objective= to live and drink.*
+				</text>
+				<part Name="QuestHandler" QuestID="Occurance! Banana Phone" Action="Complete"/>
+			</choice>
 		</start>
 
 <!-- 		<start ID="Greet_BeyLah0" IfZoneName="Bey Lah" IfNotHaveActiveQuest="Find Eskhind" IfNotFinishedQuest="Kith and Kin">
@@ -149,21 +157,30 @@
 		</node>
 		<node ID="Songs" AllowEscape="false">
 			<text>
+				<!-- Saami Song -->
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a distant land, so far away from Qud: you see a sparkling white landscape, dotted by dark greens of quill-trees; a smudge of orange, where tribesfolk lit a campfire. 
 
 				Simple life. Smiles and fish.*}}~
+				<!-- Stilt Song -->
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a festival. Reds, yellows and oranges are all around you, swirling like vortices — so easy to lose yourself here. Laughter and banter, trade and barter. Hidden by a scarlet shawl, a watchful gaze peers vigilantly over all and every.
 
 				Ah, it's a Stilt song.*}}~
-				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation: a blade of one edge, imbued with secrets of the petal-smith. A Petal stands close, enchanted by the troll-smith's craft. 
+				<!-- Song of Teipla -->
+				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation: a blade of one edge, imbued with secrets of the troll-smith. A Petal stands close, enchanted by the master's craft. 
 
 				One day, this will become her craft, too.*}}~
+				<!-- Song of Pelum's Reach -->
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by the splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
 
 				Perhaps you will.*}}~
+				<!-- Flux Knight's Song -->
 				{{C|*A blur of blues and whites engulfes you. With deafening force it pulls you downward, but your mind is elsewhere, your vengeful gaze locked onto a blimp of grey high above you: a sky strider. There's but a single thought in your mind.
 
-				The Knights will pay.*}}
+				"The Knights will pay".*}}~
+				<!-- Song of the Marauder -->
+				{{C|*Your gaze is hit by the intensity of the jungle as greens and yellows start dancing with the wind, twisting and mixing with one another. It's distracting, so much so that your mind doesn't notice the predator: a sleek shape, masterfully painted to not stand out among the trees around it. It twists its torso, pointing the rail slinger on its shoulder directly at your cockpit.
+
+				The Marauder found its prey.}}
 			</text>
 			<choice Target="SongsEnd">*Open your eyes.*</choice>
 		</node>
@@ -177,6 +194,7 @@
 		</node>
 		<node ID="SongBanana2" AllowEscape="false">
 			<text>
+				<!-- Banana Song -->
 				{{C|*Ribbons of yellow snake their way from above you, curling around your being before retreating into the pinkish mist. Their trails reveal a shpae to you: vibrantly yellow, slightly curved, with a rought stem atop of it. There's an aroma in the air that's somehow familiar to you.
 
 				The shape rings. You pause to ask yourself: "What's a phone?"*}}
@@ -189,12 +207,25 @@
 
 				{{C|So... Want a banana?}}
 			</text>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Chuckle and take the chip.*</choice>
-			<choice Target="End" GiveItem="Sun-Dried Banana">*Sigh and take the chip.*</choice>
-			<choice Target="End">*Thank the tinkle-monk for the curious song, but don't take the chip. Maybe some other time.*</choice>
+			<choice Target="End" GiveItem="Sun-Dried Banana">
+				<text>*Chuckle and take the chip.*
+				</text>
+				<part Name="QuestHandler" QuestID="Occurance! Banana Phone" Action="Complete"/>
+			</choice>
+			<choice Target="End" GiveItem="Sun-Dried Banana">
+				<text>*Sigh and take the chip.*
+				</text>
+				<part Name="QuestHandler" QuestID="Occurance! Banana Phone" Action="Complete"/>
+			</choice>
+			<choice Target="End">
+				<text>*Thank the tinkle-monk for the curious song, but don't take the chip. Maybe some other time.*
+				</text>
+				<part Name="QuestHandler" QuestID="Occurance! Banana Phone" Action="Complete"/>
+			</choice>
 		</node>
 		<node ID="SongGrave2" AllowEscape="false">
 			<text>
+				<!-- Song of the Starlight Brigade -->
 				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a battle in a black sea. A beam of pure white light punches through the triangular-patterned barrier. The collosal prism is breached, and as it shatters, the beam splits into six colorful stripes.
 
 				This fight is all they know that's right.*}}
