@@ -49,7 +49,7 @@
 				{{C|We need to hurry, =name=!}}~
 				{{C|Please, do as Otho says; we'll need to be ready.}}
 			</text>
-			<choice Target="SongGrave1">*Ask =pronouns.objective= to sing a song of inspiration. You will need it.*</choice>
+			<choice Target="SongGrave1" StartQuest="An occurence! Grave Song">*Ask =pronouns.objective= to sing a song of inspiration. You will need it.*</choice>
 			<choice ID="Trade">
 				<text>*Tell =pronouns.objective= you want to make some last-minute equipment adjustments.*</text>
 				<part Name="Trade"/>
@@ -73,6 +73,12 @@
 			<choice Target="SongBanana">*Tell the tinkle-monk that you were hoping to hear one of =pronouns.possessive= songs instead.*</choice>
 			<choice Target="End" FinishQuest="An occurence! Banana Phone">*You're not really in the mood for bananas right now. Thank the tinkle-monk and wish =pronouns.objective= to live and drink.*</choice>
 		</start>
+		<start ID="Greet_CrownOfRibbons" IfLevel="8" IfHavePart="Horns" IfTime="700-900" IfNotFinishedQuest="An occurence! Crown of Ribbons" StartQuest="An occurence! Crown of Ribbons" AllowEscape="false">
+			<text>
+				{{C|Oh, =name=, I have something for you!
+
+				}}
+			</text>
 
 <!-- 		<start ID="Greet_BeyLah0" IfZoneName="Bey Lah" IfNotHaveActiveQuest="Find Eskhind" IfNotFinishedQuest="Kith and Kin">
 			<text>
@@ -236,7 +242,7 @@
 
 				This fight is all they know that's right.*}}
 			</text>
-			<choice Target="End">*Open your eyes. Nod to the tinkle-monk. It's time.*</choice>
+			<choice Target="End" FinishQuest="An occurence! Grave Song">*Open your eyes. Nod to the tinkle-monk. It's time.*</choice>
 		</node>
 		<!-- Distributed choices -->
 		<choice Target="Song" Distribute="Greet" Qualifier="ID">*Ask if =pronouns.subjective= could sing for you.*</choice>
