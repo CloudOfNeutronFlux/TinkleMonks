@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <subtypes>
 
-		<!-- WIP -->
- 	<!-- <class ID="Castes" Load="Merge">
- 		<category Name="clau_TinkleKin" DisplayName="{{icy|Tinkle-Monastery}}">
- 		<subtype Name="Monk-Percussionist" Code="cmp" Gear="clau_StartingGear_MonkDrum" Tile="Creatures/tinklemonk.png" DetailColor="B">
- 			<stat Name="Agility" Bonus="2"/>
- 			<stat Name="Ego" Bonus="1"/>
- 			<skills>
- 				<skill Name="Persuasion_InspiringPresence"/>
- 				<skill Name="Cudgel"/>
- 				<skill Name="Tactics_Throwing"/>
- 				<skill Name="Tinkering_Tinker1"/>
- 			</skills>
- 			<reputations>
- 				<reputation With="Birds" Value="100"/>
- 			</reputations>
- 		</subtype>
- 		<subtype Name="Monk-Hornist" Code="cmh" Gear="clau_StartingGear_MonkHorn" Tile="Creatures/tinklemonk.png" DetailColor="B">
- 			<stat Name="Strength" Bonus="2"/>
- 			<stat Name="Ego" Bonus="1"/>
- 			<skills>
- 				<skill Name="Persuasion_InspiringPresence"/>
- 				<skill Name="Cudgel"/>
- 				<skill Name="Cudgel_Conk"/>
- 				<skill Name="HeavyWeapons"/>
- 				<skill Name="HeavyWeapons_Tank"/>
- 			</skills>
- 			<reputations>
- 				<reputation With="Birds"/>
- 			</reputations>
- 		</subtype>
- 		</category>
- 	</class> -->
  	<class ID="Callings" Load="Merge">
 		<subtype Name="Tinkle-Monk" Code="ctm" Gear="clau_StartingGear_TinkleMonk" Tile="Creatures/tinklemonk.png" DetailColor="B">
 			<stat Name="Ego" Bonus="1"/>

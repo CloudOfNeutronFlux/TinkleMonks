@@ -68,7 +68,7 @@
 		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
 		<part Name="Commerce" Value="120"/>
 		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
-		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgel" Stat="Ego"/>
+		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgels" Stat="Ego"/>
 		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" bShowShotsPerAction="false" NoWildFire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="ProjectileFlamethrower" />
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
@@ -90,41 +90,13 @@
 		<part Name="Description" Short="A circle of wood, metal jingles slotted into its frame with care and precision. As one moves their hand, the tambourine sings its rainy song."/>
 		<part Name="Commerce" Value="100"/>
 		<part Name="Physics" Weight="0" FlameTemperature="9999" VaporTemperature="9999"/>
-		<part Name="MeleeWeapon" MaxStrengthBonus="5" BaseDamage="1d4" Skill="Cudgel"/>
+		<part Name="MeleeWeapon" MaxStrengthBonus="5" BaseDamage="1d4" Skill="Cudgels"/>
 		<part Name="ElementalDamage" Damage="2d4+4" Attributes="Cold"/>
 		<tag Name="Tier" Value="4"/>
 		<tag Name="Hitsound" Value="meleeTier4_4"/>
 		<tag Name="AlwaysEquipAsWeapon"/>
 		<xtagGrammar Proper="true"/>
 	</object>
-
-		<!-- WIP -->
-<!-- 	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
-		<part Name="Render" DisplayName="hunting horn" Tile="creatures/sw_goathorn.bmp" ColorString="&amp;w" DetailColor="Y"/>
-		<part Name="Description" Short="big horn go BBBWWWRRRRRRRRRRRRRRROOOOUUUUUUUU"/>
-		<part Name="Commerce" Value="50"/>
-		<part Name="Physics" Weight="30" UsesTwoSlots="true"/>
-		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d4+2" Skill="Cudgel" Stat="Strength"/>
-		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="sm" NoWildFire="true" MaxRange="50" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="20"/>
-		<part Name="CooldownAmmoLoader" Cooldown="1d4" Readout="true"/>
-		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="clau_ProjectileHuntingHorn"/>
-    	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
-		<part Name="Examiner" AlternateDisplayName="big horn" Complexity="4"/>
-		<part Name="TinkerItem" Bits="0006" CanDissassemble="true" CanBuild="true"/>
-		<tag Name="TurretName" Value="hunting horn turret"/>
-		<tag Name="Mods" Value="CdugelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
-		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="Hitsound" Value="meleeTier4_4"/>
-		<xtagGrammar Proper="true"/>
-	</object>
-
-	<object Name="clau_ProjectileHuntingHorn" Inherits="TemporaryProjectile">
-		<part Name="Render" DisplayName="haunting tune" ColorString="&amp;B"/>
-		<part Name="Projectile" BasePenetration="4" BaseDamage="1d6" ColorString="&amp;B" PassByVerb="echo"/>
-		<part Name="BlastOnHit" Force="30"/>
-	</object> -->
-
 
 	<object Name="clau_gal's hat" Inherits="BaseHat">
 		<part Name="Render" DisplayName="wide-brimmed hat" Tile="items/sw_hat.bmp" ColorString="&amp;W" DetailColor="Y"/>
@@ -145,35 +117,5 @@
 		<part Name="Armor" AV="0" DV="2" Heat="4" WornOn="Body"/>
 		<tag Name="AlwaysEquipAsArmor"/>
 		<tag Name="Tier" Value="2"/>
-	</object>
-
-	<object Name="clau_monkdress_gritgate" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by the Barathrumites."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="3"/>
-		<part Name="Armor" AV="2" DV="4" Heat="5" Agility="1" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
-	</object>
-
-	<object Name="clau_monkdress_ezra" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by Daughters of Exile."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="4"/>
-		<part Name="Armor" AV="3" DV="2" Heat="5" Strength="1" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
-	</object>
-
-	<object Name="clau_monkdress_armorer" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by an unknown smith."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="4"/>
-		<part Name="Armor" AV="4" DV="0" Heat="5" Cold="5" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 </objects>

@@ -3,6 +3,6 @@
   "Title": "Tinkle-monks",
   "Description": "Nothing like smacking snapjaws with your keytar. \n\nThis mod adds:\n-keytar: a fire-based cudgel \n-Tinkle-monk: companion-oriented subtype, starts with a keytar\n-Pluna Freyk: custom start with a fancy beaked tile -Tambourine Gal: a telepathic Tinkle-monk to accompany you on your adventures\n\nHave fun!",
   "Tags": "Stable,Item,Weapon,Subtype,Pet",
-  "Visibility": "0",
+  "Visibility": "2",
   "ImagePath": "preview.png"
 }
