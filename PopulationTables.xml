@@ -14,7 +14,8 @@
 		</group>
 	</population>
 
-	<population Name="clau_StartingGear_MonkDrum">
+		<!-- WIP -->
+<!-- 	<population Name="clau_StartingGear_MonkDrum">
 		<group Name="Items" Style="pickeach">
 			<table Name="StartingGear_Common"/>
 			<object Blueprint="HalfFullCanteen" Number="2"/>
@@ -45,6 +46,6 @@
 			<table Name="Artifact 1" Number="1-4"/>
 			<table Name="Trinkerts 1" Number="1-3"/>
 		</group>
-	</population>
+	</population> -->
 
 </populations>

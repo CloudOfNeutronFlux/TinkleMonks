@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <subtypes>
 
- 	<class ID="Castes" Load="Merge">
+		<!-- WIP -->
+ 	<!-- <class ID="Castes" Load="Merge">
  		<category Name="clau_TinkleKin" DisplayName="{{icy|Tinkle-Monastery}}">
  		<subtype Name="Monk-Percussionist" Code="cmp" Gear="clau_StartingGear_MonkDrum" Tile="Creatures/tinklemonk.png" DetailColor="B">
  			<stat Name="Agility" Bonus="2"/>
@@ -31,7 +32,7 @@
  			</reputations>
  		</subtype>
  		</category>
- 	</class>
+ 	</class> -->
  	<class ID="Callings" Load="Merge">
 		<subtype Name="Tinkle-Monk" Code="ctm" Gear="clau_StartingGear_TinkleMonk" Tile="Creatures/tinklemonk.png" DetailColor="B">
 			<stat Name="Ego" Bonus="1"/>

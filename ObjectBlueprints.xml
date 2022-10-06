@@ -98,7 +98,8 @@
 		<xtagGrammar Proper="true"/>
 	</object>
 
-	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
+		<!-- WIP -->
+<!-- 	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="hunting horn" Tile="creatures/sw_goathorn.bmp" ColorString="&amp;w" DetailColor="Y"/>
 		<part Name="Description" Short="big horn go BBBWWWRRRRRRRRRRRRRRROOOOUUUUUUUU"/>
 		<part Name="Commerce" Value="50"/>
@@ -122,7 +123,7 @@
 		<part Name="Render" DisplayName="haunting tune" ColorString="&amp;B"/>
 		<part Name="Projectile" BasePenetration="4" BaseDamage="1d6" ColorString="&amp;B" PassByVerb="echo"/>
 		<part Name="BlastOnHit" Force="30"/>
-	</object>
+	</object> -->
 
 
 	<object Name="clau_gal's hat" Inherits="BaseHat">

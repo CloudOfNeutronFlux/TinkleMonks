@@ -5,6 +5,12 @@
 	</quest>
 	<quest Name="An occurence! Grave Song">
 	</quest>
-	<quest Name="An occurence! Crown of Ribbons">
+	<quest Name="An occurence! The Handshake">
+		<step Name="Momentum">
+		</step>
+		<step Name="Fluidity">
+		</step>
+		<step Name="Simplicity">
+		</step>
 	</quest>
 </quests>
