@@ -46,7 +46,7 @@
 		</start>
 		
 		<!-- Super Secret Handshake -->
-		<start ID="Greet_TheHandshake" IfNotLevelLessOrEqual="8" IfHavePart="MultipleArms" IfTime="650-900" IfNotFinishedQuest="An occurence! The Handshake" StartQuest="An occurence! The Handshake" AllowEscape="false">
+		<start ID="Greet_TheHandshake" IfNotLevelLessOrEqual="8" IfTime="650-900" IfNotFinishedQuest="An occurence! The Handshake" StartQuest="An occurence! The Handshake" AllowEscape="false">
 			<text>
 				{{C|Hey, =name=! I was just going to talk to you. I was wondering if we should come up with our own secret handshake that only we know, just for the fun of it. What do you think, friend?}}
 			</text>
@@ -156,14 +156,14 @@
 				{{C|Ah! Sorry, I was thinking of a new song.}}~
 				{{C|Hey, =name=.}}
 			</text>
-			<text IfTime="700-900">
+			<text IfTime="700-900" IfZoneLevel="1-10" IfNotZoneID="JoppaWorld.53.3">
 				{{C|Ah, isn't it a lovely evening?}}~
 				{{C|Sun's going to set soon. Good thing I glow in the dark, right?}}~
 				{{w|*=pronouns.Subjective= =verb:give:afterpronoun= you a warm smile.*}}~
 				{{C|I'm thinking we should find a place to camp. We both could use some rest after all this walking}}~
 				{{w|*=pronouns.Subjective= quietly =verb:hum:afterpronoun= a melody. It sounds like a lullaby.*}}
 			</text>
-			<text IfTime="900-270">
+			<text IfTime="900-270" IfZoneLevel="1-10" IfNotZoneID="JoppaWorld.53.3">
 				{{C|Boo!}}
 
 				{{w|=pronouns.Subjective= =verb:giggle:afterpronoun=.}}~
@@ -172,6 +172,12 @@
 				{{C|I think the Moon's a little bit brighter tonight.}}
 			</text>
 			<!-- Zone-specific -->
+			<text IfNotZoneLevel="1-10" IfNotZoneID="JoppaWorld.22.14.1.0.13,JoppaWorld.67.17.1.1.11">
+				{{C|Hold my hand, friend — I'll guide you through the darkness of these caves.}}~
+				{{C|Let's tread carefully, =name=. There are many dangers waiting within the caves of Qud.}}~
+				{{w|*=pronouns.Subjective= =verb:smile:afterpronoun= and =verb:give:afterpronoun= you a firm nod.*}}~
+				{{C|Don't step too far away, =name=.}}
+			</text>
 			<text IfZoneName="Joppa">
 				{{C|Ahh, I want apple matz...}}~
 				{{C|Did you see Ctesiphus anywhere? I have some treats for him.}}~
@@ -189,16 +195,22 @@
 				{{C|There's something familiar about Crowsong, but I'm not sure what it is...}}~
 				{{C|Kyakukya is a homey place. "Here you can be with friends, or muse alone".}}~
 				{{C|You have to try the mushroom cider, friend! There's nothing quite like it outside of Kyakukya.}}~
-				{{w|*=pronouns.Subjective= =verb:close:afterpronoun= =pronouns.possessive= eyes and =verb:take:afterpronoun= a deep breath, taking in the atmosphere of the village.*}}
+				{{w|*=pronouns.Subjective= =verb:close:afterpronoun= =pronouns.possessive= eyes and =verb:take:afterpronoun= a deep breath, submerging =pronouns.reflexive= in the atmosphere of the village.*}}
 			</text>
+			<!-- Yd Freehold -->
 			<!-- Change the monastery line when you add the monastery in-game. -->
 			<text IfZoneName="Yd Freehold">
 				{{C|Do you hear that, friend? That's a hurdy-gurdy! It's been so long since I've heard one...}}~
 				{{C|Yd reminds me of my monastery...}}~
+				{{w|*=pronouns.Subjective= =verb:look:afterpronoun= around, a spot of nostalgia in =pronouns.possessive= gaze.*}}
+			</text>
+			<text IfZoneID="JoppaWorld.67.17.1.1.10">
 				{{C|They have instruments downstairs! Do you want to go jam for a bit?}}
 			</text>
-			<!-- <text IfZoneName="Grit Gate" IfZoneLevel="10">
-			</text> -->
+			<!-- Grit Gate -->
+			<text IfZoneID="JoppaWorld.22.14.1.0.13">
+				{{C|hi}}
+			</text>
 			<text IfZoneName="Ezra">
 				{{C|I wonder what Yla's up to these days.}}~
 				{{C|Let's stay a while longer, =name=. Ezra is mesmerizing.}}~
@@ -208,37 +220,40 @@
 			<text IfZoneName="Ezra" IfHaveItem="Sun-Dried Banana">
 				{{C|Want a banana? Oh, you already have one. Guess this one's mine, then!}}
 			</text>
-			<!-- Mutation-specific -->
-			<text IfHavePart="Carapace">
-				{{C|Your home is on your back, friend!}}~
-				{{C|Let me know if your shell starts itching: I'll give it a good scratch or two!}}
-			</text>
-			<text IfHavePart="ElectricalGeneration">
-				{{w|*=pronouns.Subjective= =verb:touch:afterpronoun= you with =pronouns.possessive= hand and giggles as =pronouns.possessive= hair puffs up from static.*}}
-			</text>
-			<text IfHavePart="FlamingHands">
-				{{C|Do you think you can warm some rocks for us to slumber on?}}~
-				{{C|You give the warmest pets, friend.}}
-			</text>
-<!-- 			<text IfHavePart="FreezingHands">
-				{{C|}}
-			</text> -->
-			<text IfHavePart="Horns">
-				{{C|You're wondrously crowned, =name=.}}
-			</text>
-			<text IfHavePart="MultipleArms">
-				{{C|Oh, you'd look so good with a tambourine in each hand, friend.}}~
-				{{C|Have you heard of shadow puppetry, =name=? I think you'd be great at it.}}
-			</text>
-			<!-- <text IfHavePart="MultipleLegs">
-				{{C|}}
-			</text> -->
-			<text IfHavePart="PsionicMigraines">
-				{{C|How is your mind, =name=?}}~
-				{{C|Tell me if I'm too loud, friend. I don't want to accidentally hurt you.}}
+			<text IfZoneName="Arcade to the Twin Gates">
+				{{C|What do you think is behind the gates?}}~
+				{{C|There's so much history within this place, but it feels off somehow.}}~
+				{{C|Should we visit Ezra while we're here?}}
 			</text>
 		</start>
 
+		<!-- Thoughts Nodes -->
+		<node ID="Thoughts_HUB">
+			<text>
+				{{w|*You think on what you can ask the tinkle-monk about.*}}
+			</text>
+			<choice Target="Thoughts_General_T0" IfLevelLessOrEqual="1">*Ask the tinkle-monk what =pronouns.subjective= =verb:think:afterpronoun= about your journey so far.*</choice>
+			<choice Target="Thoughts_General_T1" IfNotLevelLessOrEqual="1" IfLevelLessOrEqual="8">*Ask the tinkle-monk what =pronouns.subjective= =verb:think:afterpronoun= about your journey so far.*</choice>
+			<choice Target="Greet">*Your curiosity is satisfied for now.*</choice>
+			<!-- These two are here because child nodes don't inherit distributed choices -->
+			<choice ID="Trade" Ordinal="990">
+				<text>*Tell =pronouns.objective= you want to go over your belongings.*</text>
+				<part Name="Trade"/>
+			</choice>
+			<choice Target="End">*You should keep moving. Wish =pronouns.objective= to live and drink.*</choice>
+		</node>
+		<node ID="Thoughts_General_T0" Inherits="Thoughts_HUB">
+			<text>
+				{{C|It's only just begun! There are so many things to see, so many people to talk to, so many songs to write and perform. It's almost overwhelming.}}
+			</text>
+		</node>
+		<node ID="Thoughts_General_T1" Inherits="Thoughts_HUB">
+			<text>
+				{{C|I think we're making good progress, although I had completely forgotten how much walking is involved in this.}}
+
+				{{w|*=pronouns.Subjective= =verb:giggle:afterpronoun=.*}}
+			</text>
+		</node>
 		<!-- Song Nodes -->
 		<node ID="Song" AllowEscape="false">
 			<text>
@@ -266,19 +281,19 @@
 		</node>
 		<node ID="Songs" AllowEscape="false">
 			<text>
-				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a distant land, so far away from Qud: you see a sparkling white landscape, dotted by dark greens of quill-trees; a smudge of orange, where tribesfolk lit a campfire. 
+				{{w|*=pronouns.Subjective= =verb:sing:afterpronoun= of a distant land, so far away from Qud: you see a sparkling white landscape, dotted by dark greens of quill-trees; a smudge of orange, where tribesfolk lit a campfire. 
 
 				Simple life. Smiles and fish.*}}~
-				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a festival. Reds, yellows and oranges are all around you, swirling like vortices — so easy to lose yourself here. Laughter and banter, trade and barter. Hidden by a scarlet shawl, a watchful gaze peers vigilantly over all and every.
+				{{w|*=pronouns.Subjective= =verb:sing:afterpronoun= of a festival. Reds, yellows and oranges are all around you, swirling like vortices — so easy to lose yourself here. Laughter and banter, trade and barter. Hidden by a scarlet shawl, a watchful gaze peers vigilantly over all and every.
 
 				Ah, it's a Stilt song.*}}~
-				{{C|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation: a blade of one edge, imbued with secrets of the past. A young Petal stands close, enchanted by the master's craft. 
+				{{w|*Rhythmic strikes. Blindingly white sparks of heated metal jump up and down as each strike reaches its destination. There is no place for mistakes in troll-smith's design; his work is impeccable. The strikes continue. Nothing can disturb the master as he finishes his creation: a blade of one edge, imbued with secrets of the past. A young Petal stands close, enchanted by the master's craft. 
 
 				One day, this will become her craft, too.*}}~
-				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by the splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
+				{{w|*=pronouns.Subjective= =verb:sing:afterpronoun= of a hamlet in the hills. Greyness of rock interrupted by the splashes of orange and blue. Tall and white, the legion of wind catchers guards the flowery field near the hamlet's entrance. A beaked one sits there, embraced by her hindren companion. They see you, and gesture to stay.
 
 				Perhaps you will.*}}~
-				{{C|*A blur of blues and whites engulfes you. With deafening force it pulls you downward, but your mind is elsewhere, your vengeful gaze locked onto a blimp of grey high above you: a sky strider. There's but a single thought in your mind.
+				{{w|*A blur of blues and whites engulfes you. With deafening force it pulls you downward, but your mind is elsewhere, your vengeful gaze locked onto a blimp of grey high above you: a sky strider. There's but a single thought in your mind.
 
 				"The Knights will pay".*}}
 			</text>
@@ -294,7 +309,7 @@
 		</node>
 		<node ID="SongBanana2" AllowEscape="false">
 			<text>
-				{{C|*Ribbons of yellow snake their way from above you, curling around your being before retreating into the pinkish mist. Their trails reveal a shpae to you: vibrantly yellow, slightly curved, with a rought stem atop of it. There's an aroma in the air that's somehow familiar to you.
+				{{w|*Ribbons of yellow snake their way from above you, curling around your being before retreating into the pinkish mist. Their trails reveal a shpae to you: vibrantly yellow, slightly curved, with a rought stem atop of it. There's an aroma in the air that's somehow familiar to you.
 
 				The shape rings. You pause to ask yourself: "What's a phone?"*}}
 			</text>
@@ -302,7 +317,7 @@
 		</node>
 		<node ID="SongBananaEnd" AllowEscape="false">
 			<text>
-				{{w|*The tinkle-monk barely holds =pronouns.reflexive= together, giggles treacherously seeping through =pronouns.possessive= smile. =pronouns.Possessive= palm is open before you, holding a banana chip.*}}
+				{{w|*The tinkle-monk barely holds =pronouns.reflexive= together, giggles treacherously seeping through =pronouns.possessive= smile. =pronouns.Possessive= palm is open before you, a banana chip resting in it.*}}
 
 				{{C|So... Want a banana?}}
 			</text>
@@ -312,17 +327,20 @@
 		</node>
 		<node ID="SongGrave2" AllowEscape="false">
 			<text>
-				{{C|*=pronouns.Subjective= =verb:sing:afterpronoun= of a battle in a black sea. A beam of pure white light punches through the triangular-patterned barrier. The collosal prism is breached, and as it shatters, the beam splits into six colorful stripes.
+				{{w|*=pronouns.Subjective= =verb:sing:afterpronoun= of a battle in a black sea. A beam of pure white light punches through the triangular-patterned barrier. The collosal prism is breached, and as it shatters, the beam splits into six colorful stripes.
 
 				This fight is all they know that's right.*}}
 			</text>
 			<choice Target="End" FinishQuest="An occurence! Grave Song">*Open your eyes. Nod to the tinkle-monk. It's time.*</choice>
 		</node>
 		<!-- Distributed choices -->
+		<choice Target="Thoughts_HUB" Distribute="Greet" Qualifier="ID">*Ponder any questions that you might want to ask.*</choice>
 		<choice Target="Song" Distribute="Greet" Qualifier="ID">*Ask if =pronouns.subjective= could sing for you.*</choice>
-		<choice Target="TheHandshake_PostOcc_M" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Momentum">*Perform your secret handshake.*</choice>
-		<choice Target="TheHandshake_PostOcc_F" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Fluidity">*Perform your secret handshake.*</choice>
-		<choice Target="TheHandshake_PostOcc_S" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Simplicity">*Perform your secret handshake.*</choice>
+		<!-- Handshake Post Occurence -->
+		<choice Target="TheHandshake_PostOcc_M" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Momentum" Ordinal="980">*Perform your secret handshake.*</choice>
+		<choice Target="TheHandshake_PostOcc_F" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Fluidity" Ordinal="980">*Perform your secret handshake.*</choice>
+		<choice Target="TheHandshake_PostOcc_S" Distribute="Greet" Qualifier="ID" IfFinishedQuestStep="An occurence! The Handshake~Simplicity" Ordinal="980">*Perform your secret handshake.*</choice>
+		<!-- Handshake END -->
 		<choice ID="Trade" Distribute="Greet" Qualifier="ID" Ordinal="990">
 			<text>*Tell =pronouns.objective= you want to go over your belongings.*</text>
 			<part Name="Trade"/>

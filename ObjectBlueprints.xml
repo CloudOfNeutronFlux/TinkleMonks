@@ -5,9 +5,19 @@
 	<!-- ACTORSESES -->
 
 	<object Name="clau_FunkDummy" Inherits="BaseHumanoid">
-		<part Name="Render" DisplayName="FunkDummy" Tile="creatures/birdtaur.png" ColorString="&amp;r" DetailColor="w"/>
+		<part Name="Render" DisplayName="FunkDummy" Tile="creatures/monk-percussionist.png" ColorString="&amp;y" DetailColor="B"/>
 		<part Name="Brain" Hostile="False" Wanders="False" Factions="Joppa-100"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+		<tag Name="ExcludeFromDynamicEncounters"/>
+	</object>
+
+	<object Name="clau_ShowDummyK" Inherits="clau_FunkDummy">
+		<part Name="Render" Tile="creatures/monk-klaviscist-F.png" ColorString="&amp;B" DetailColor="Y"/>
+	</object>
+	<object Name="clau_ShowDummyH" Inherits="clau_FunkDummy">
+		<part Name="Render" Tile="creatures/monk-hornist.png" ColorString="&amp;c" DetailColor="Y"/>
+	</object>
+	<object Name="clau_ShowDummyP" Inherits="clau_FunkDummy">
+		<part Name="Render" Tile="creatures/monk-percussionist-F.png" ColorString="&amp;Y" DetailColor="B"/>
 	</object>
 
 
@@ -25,7 +35,7 @@
 		<stat Name="Willpower" sValue="18"/>
 		<stat Name="Ego" sValue="21"/>
 		<stat Name="Hitpoints" sValue="30"/>
-		<part Name="Brain" Hostile="False" Factions="Playerneutral-100" MaxKillRadius="5"/>
+		<part Name="Brain" Hostile="False" Factions="Playerneutral-100" MaxKillRadius="4"/>
 		<part Name="AISelfPreservation" Threshold="35"/>
 		<part Name="Description" Short="Through salt and dust, the tinkle-monk's spirit lights the path for friends and comrades. =pronouns.Possessive= voice bends melodies into magnificent and colorful shapes, while =pronouns.possessive= hands weave whispering rhythms through motions of jingle-rings."/>
 		<part Name="ConversationScript" ConversationID="TambourineGalConvo"/>
@@ -69,12 +79,12 @@
 		<part Name="Commerce" Value="120"/>
 		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
 		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgel" Stat="Ego"/>
-		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" bShowShotsPerAction="false" NoWildFire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
+		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" bShowShotsPerAction="false" NoWildfire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="ProjectileFlamethrower" />
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
 		<part Name="ElementalDamage" Damage="2d6" Attributes="Heat"/>
 		<part Name="Examiner" AlternateDisplayName="strange case" Complexity="4"/>
-		<part Name="TinkerItem" Bits="0004" CanDissassemble="true" CanBuild="true"/>
+		<part Name="TinkerItem" Bits="0004" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="TurretName" Value="{{chaotic|keytar}} turret"/>
 		<tag Name="Mods" Value="CdugelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
 		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
@@ -98,32 +108,44 @@
 		<xtagGrammar Proper="true"/>
 	</object>
 
-		<!-- WIP -->
-<!-- 	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
-		<part Name="Render" DisplayName="hunting horn" Tile="creatures/sw_goathorn.bmp" ColorString="&amp;w" DetailColor="Y"/>
-		<part Name="Description" Short="big horn go BBBWWWRRRRRRRRRRRRRRROOOOUUUUUUUU"/>
+	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
+		<part Name="Render" DisplayName="{{ghostly|haunting horn}}" Tile="Items/huntinghorn.png" ColorString="&amp;w" DetailColor="Y"/>
+		<part Name="Description" Short="A blend of wood and metals forms a hollow tube. It waits for a worthy soul to breath life into it, for without one the tube will forever be incomplete."/>
 		<part Name="Commerce" Value="50"/>
 		<part Name="Physics" Weight="30" UsesTwoSlots="true"/>
 		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d4+2" Skill="Cudgel" Stat="Strength"/>
-		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="sm" NoWildFire="true" MaxRange="50" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="20"/>
-		<part Name="CooldownAmmoLoader" Cooldown="1d4" Readout="true"/>
+		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="sm" NoWildfire="true" MaxRange="50" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="20"/>
+		<part Name="CooldownAmmoLoader" Cooldown="2d3" Readout="true"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="clau_ProjectileHuntingHorn"/>
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
-		<part Name="Examiner" AlternateDisplayName="big horn" Complexity="4"/>
-		<part Name="TinkerItem" Bits="0006" CanDissassemble="true" CanBuild="true"/>
-		<tag Name="TurretName" Value="hunting horn turret"/>
-		<tag Name="Mods" Value="CdugelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
+		<part Name="Examiner" AlternateDisplayName="big tube" Complexity="4"/>
+		<part Name="TinkerItem" Bits="0006" CanDisassemble="true" CanBuild="true"/>
+		<tag Name="TurretName" Value="{{ghostly|haunting horn}} turret"/>
+		<tag Name="Mods" Value="CudgelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
 		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
 		<tag Name="Tier" Value="4"/>
 		<tag Name="Hitsound" Value="meleeTier4_4"/>
+		<!-- <tag Name="MissileFireSound" Value="super cool bwwwrooou sound idk just imagine it's here for now"/> -->
 		<xtagGrammar Proper="true"/>
 	</object>
 
 	<object Name="clau_ProjectileHuntingHorn" Inherits="TemporaryProjectile">
-		<part Name="Render" DisplayName="haunting tune" ColorString="&amp;B"/>
+		<part Name="Render" DisplayName="{{ghostly|haunting tune}}" ColorString="&amp;B"/>
 		<part Name="Projectile" BasePenetration="4" BaseDamage="1d6" ColorString="&amp;B" PassByVerb="echo"/>
-		<part Name="BlastOnHit" Force="30"/>
-	</object> -->
+		<part Name="BlastOnHit" Force="3"/>
+	</object>
+
+	<object Name="clau_drumstick" Inherits="Item">
+		<part Name="Render" DisplayName="{{w|drum stick}}" Tile="Items/drumsticks.png" ColorString="&amp;w" DetailColor="Y"/>
+		<part Name="Description" Short="A seemingly simple wooden body, its secrets revealed only to the masters of rhythm, destruction, or both."/>
+		<part Name="Commerce" Value="10"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="ThrownWeapon" Damage="2d6" Penetration="9"/>
+		<part Name="Examiner" AlternateDisplayName="stick" Complexity="2"/>
+		<part Name="TinkerItem" Bits="00" CanDisassemble="true" CanBuild="true"/>
+		<tag Name="Mods" Value="CommonMods,ThrownWeaponMods"/>
+		<tag Name="Tier" Value="2"/>
+	</object>
 
 
 	<object Name="clau_gal's hat" Inherits="BaseHat">
@@ -147,7 +169,7 @@
 		<tag Name="Tier" Value="2"/>
 	</object>
 
-	<object Name="clau_monkdress_gritgate" Inherits="BaseArmor">
+	<!-- <object Name="clau_monkdress_gritgate" Inherits="BaseArmor">
 		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
 		<part Name="Description" Short="Fashionable dress modified by the Barathrumites."/>
 		<part Name="Commerce" Value="150"/>
@@ -175,5 +197,5 @@
 		<part Name="Armor" AV="4" DV="0" Heat="5" Cold="5" WornOn="Body"/>
 		<tag Name="Tier" Value="4"/>
 		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
-	</object>
+	</object> -->
 </objects>
