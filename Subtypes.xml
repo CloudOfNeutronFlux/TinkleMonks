@@ -3,7 +3,7 @@
 
 		<!-- WIP -->
  	<class ID="Castes" Load="Merge">
- 		<category Name="clau_TinkleKin" DisplayName="{{icy|The Free Monastery of Tilke}}">
+ 		<category Name="clau_TinkleKin" DisplayName="{{watery|The Free Monastery of Tilke}}">
  		<subtype Name="Monk-Percussionist" Code="cmp" Gear="clau_StartingGear_MonkDrum" Tile="Creatures/monk-percussionist.png" DetailColor="B">
  			<stat Name="Strength" Bonus="2"/>
  			<stat Name="Ego" Bonus="1"/>
@@ -33,6 +33,7 @@
  		</subtype>
  		</category>
  	</class>
+ 	
  	<class ID="Callings" Load="Merge">
 		<subtype Name="Monk-Klaviscist" Code="cmk" Gear="clau_StartingGear_MonkKey" Tile="Creatures/monk-klaviscist.png" DetailColor="B">
 			<stat Name="Willpower" Bonus="1"/>

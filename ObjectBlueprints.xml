@@ -34,7 +34,7 @@
 		<stat Name="Intelligence" sValue="16"/>
 		<stat Name="Willpower" sValue="18"/>
 		<stat Name="Ego" sValue="21"/>
-		<stat Name="Hitpoints" sValue="30"/>
+		<stat Name="Hitpoints" sValue="60"/>
 		<part Name="Brain" Hostile="False" Factions="Playerneutral-100" MaxKillRadius="4"/>
 		<part Name="AISelfPreservation" Threshold="35"/>
 		<part Name="Description" Short="Through salt and dust, the tinkle-monk's spirit lights the path for friends and comrades. =pronouns.Possessive= voice bends melodies into magnificent and colorful shapes, while =pronouns.possessive= hands weave whispering rhythms through motions of jingle-rings."/>
@@ -72,24 +72,32 @@
 
 
 	<!-- ITEMSES -->
+	<!-- Base Objects -->
+	<object Name="clau_basedress" Inherits="BaseArmor">
+		<part Name="Render" DisplayName="swing dress" Tile="items/swingdress.png" ColorString="&amp;Y" DetailColor="W"/>
+		<part Name="Description" Short="This simple yet dashing dress flows in enthralling patterns with every motion of its wearer."/>
+		<part Name="Physics" Weight="2"/>
+		<tag Name="BaseObject" Value="*noinherit"/>
+	</object>
 
+	<!-- Weapons -->
 	<object Name="clau_keytar" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
-		<part Name="Description" Short="A body of plastic with an array of bi-colored keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down evil."/>
+		<part Name="Description" Short="A body of plastic with an array of colorful keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down rivals."/>
 		<part Name="Commerce" Value="120"/>
 		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
 		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgel" Stat="Ego"/>
-		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" bShowShotsPerAction="false" NoWildfire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
+		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" ShowShotsPerAction="false" NoWildfire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="ProjectileFlamethrower" />
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
 		<part Name="ElementalDamage" Damage="2d6" Attributes="Heat"/>
-		<part Name="Examiner" AlternateDisplayName="strange case" Complexity="4"/>
+		<part Name="Examiner" Unknown="strange case" Complexity="4"/>
 		<part Name="TinkerItem" Bits="0004" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="TurretName" Value="{{chaotic|keytar}} turret"/>
-		<tag Name="Mods" Value="CdugelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
+		<tag Name="Mods" Value="CudgelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
 		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
 		<tag Name="Tier" Value="4"/>
-		<tag Name="Hitsound" Value="meleeTier4_4"/>
+		<tag Name="HitSound" Value="meleeTier4_4"/>
 		<tag Name="MissileFireSound" Value="flamethrower"/>
 		<tag Name="DynamicObjectTable:Guns"/>
 		<xtagGrammar Proper="true"/>
@@ -110,7 +118,7 @@
 
 	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
 		<part Name="Render" DisplayName="{{ghostly|haunting horn}}" Tile="Items/huntinghorn.png" ColorString="&amp;w" DetailColor="Y"/>
-		<part Name="Description" Short="A blend of wood and metals forms a hollow tube. It waits for a worthy soul to breath life into it, for without one the tube will forever be incomplete."/>
+		<part Name="Description" Short="A blend of wood and metal forms a hollow tube. It waits for a worthy soul to breath life into it, for without one the tube will forever be incomplete."/>
 		<part Name="Commerce" Value="50"/>
 		<part Name="Physics" Weight="30" UsesTwoSlots="true"/>
 		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d4+2" Skill="Cudgel" Stat="Strength"/>
@@ -118,36 +126,40 @@
 		<part Name="CooldownAmmoLoader" Cooldown="2d3" Readout="true"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="clau_ProjectileHuntingHorn"/>
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
-		<part Name="Examiner" AlternateDisplayName="big tube" Complexity="4"/>
+		<part Name="Examiner" Unknown="big tube" Complexity="4"/>
 		<part Name="TinkerItem" Bits="0006" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="TurretName" Value="{{ghostly|haunting horn}} turret"/>
 		<tag Name="Mods" Value="CudgelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
 		<tag Name="UsesSlots" Value="Missile Weapon,Missile Weapon,Hand,Hand"/>
 		<tag Name="Tier" Value="4"/>
 		<tag Name="Hitsound" Value="meleeTier4_4"/>
-		<!-- <tag Name="MissileFireSound" Value="super cool bwwwrooou sound idk just imagine it's here for now"/> -->
+		<tag Name="MissileFireSound" Value="hauntinghorn"/>
 		<xtagGrammar Proper="true"/>
 	</object>
 
 	<object Name="clau_ProjectileHuntingHorn" Inherits="TemporaryProjectile">
 		<part Name="Render" DisplayName="{{ghostly|haunting tune}}" ColorString="&amp;B"/>
-		<part Name="Projectile" BasePenetration="4" BaseDamage="1d6" ColorString="&amp;B" PassByVerb="echo"/>
+		<part Name="Projectile" BasePenetration="6" BaseDamage="2d4" ColorString="&amp;B" PassByVerb="echo"/>
 		<part Name="BlastOnHit" Force="3"/>
 	</object>
 
 	<object Name="clau_drumstick" Inherits="Item">
 		<part Name="Render" DisplayName="{{w|drum stick}}" Tile="Items/drumsticks.png" ColorString="&amp;w" DetailColor="Y"/>
-		<part Name="Description" Short="A seemingly simple wooden body, its secrets revealed only to the masters of rhythm, destruction, or both."/>
+		<part Name="Description" Short="A simple wooden body. Its secrets are revealed only to masters of rhythm, destruction, or both."/>
 		<part Name="Commerce" Value="10"/>
 		<part Name="Physics" Weight="1"/>
 		<part Name="ThrownWeapon" Damage="2d6" Penetration="9"/>
-		<part Name="Examiner" AlternateDisplayName="stick" Complexity="2"/>
+		<part Name="Examiner" Unknown="stick" Complexity="2"/>
 		<part Name="TinkerItem" Bits="00" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="Mods" Value="CommonMods,ThrownWeaponMods"/>
 		<tag Name="Tier" Value="2"/>
 	</object>
+	<object Name="clau_drumdisk" Inherits="DataDisk">
+		<part Name="DataDisk" TargetBlueprint="clau_drumstick"/>
+	</object>
 
 
+	<!-- Armor -->
 	<object Name="clau_gal's hat" Inherits="BaseHat">
 		<part Name="Render" DisplayName="wide-brimmed hat" Tile="items/sw_hat.bmp" ColorString="&amp;W" DetailColor="Y"/>
 		<part Name="Description" Short="Sun or rain, this hat will protect its wearer from elements, and sometimes hostile intent."/>
@@ -159,43 +171,96 @@
 		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 
-	<object Name="clau_swingdress" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="swing dress" Tile="items/swingdress.png" ColorString="&amp;W" DetailColor="Y"/>
-		<part Name="Description" Short="This simple yet dashing dress flows in enthralling patterns with every motion of its wearer."/>
+	<object Name="clau_ClothCurrenceA" Inherits="BaseHat">
+		<part Name="Render" DisplayName="{{lah|vine-cloth ribbon}}" Tile="items/clothcurrence.png" ColorString="&amp;W" DetailColor="r"/>
+		<part Name="Description" Short="Waves of vine-fabric ripple through the ribbon, patiently sensing the world for a command. Lah petals surface from the strands, creating calming shapes and forms, then dive back into the river of cloth."/>
+		<part Name="Commerce" Value="20"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="Armor" AV="0" DV="2" Willpower="2" Heat="1" WornOn="*"/>
+		<tag Name="Tier" Value="2"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+	<object Name="clau_ClothCurrenceB" Inherits="BaseHat">
+		<part Name="Render" DisplayName="{{sunset|vine-cloth sash}}" Tile="items/clothcurrence.png" ColorString="&amp;B" DetailColor="m"/>
+		<part Name="Description" Short="Waves of vine-fabric ripple through the sash, patiently probing the surroundings for a command. Bouquets of flowers rise from the strands, gracing the world with their beauty, then dive back into the river of cloth."/>
+		<part Name="Commerce" Value="20"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="Armor" AV="0" DV="2" Heat="2" WornOn="*"/>
+		<part Name="AddsRep" Faction="*allvisiblefactions:35"/>
+		<tag Name="Tier" Value="2"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+	<object Name="clau_ClothCurrenceC" Inherits="BaseHat">
+		<part Name="Render" DisplayName="{{metachrome|vine-cloth band}}" Tile="items/clothcurrence.png" ColorString="&amp;g" DetailColor="C"/>
+		<part Name="Description" Short="Waves of vine-fabric ripple through the band, patiently sensing the world for a command. Tiny hands of chrome surface from the strands, ready to pick apart mysteries and secrets, then dive back into the river of cloth."/>
+		<part Name="Commerce" Value="20"/>
+		<part Name="Physics" Weight="3"/>
+		<part Name="Armor" AV="1" DV="0" Elec="2" WornOn="*"/>
+		<part Name="AddsRep" Faction="Robots" Value="50"/>
+		<part Name="Toolbox" UnpoweredDisassembleBonus="5" UnpoweredInspectBonus="5" WorksOnEquipper="true" WorksOnCarrier="true" BehaviorDescription="This item slightly increases the chance of identifying artifacts and recovering additional bits when you disassemble artifacts."/>
+		<tag Name="Tier" Value="2"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+	<object Name="clau_ClothCurrenceS" Inherits="BaseHat">
+		<part Name="Render" DisplayName="{{K|vine-cloth strip}}" Tile="items/clothcurrence.png" ColorString="&amp;K" DetailColor="g"/>
+		<part Name="Description" Short="Waves of vine-fabric ripple through the strip, patiently sensing the world for a command. Opaque forms surface from the strands, adorning the surroundings with shade and mystery, then dive back into the river of cloth."/>
+		<part Name="Commerce" Value="50"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="Armor" AV="0" DV="2" Heat="2" SpeedBonus="2" WornOn="*"/>
+		<part Name="AddsRep" Faction="Strangers" Value="100"/>
+		<tag Name="Tier" Value="4"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+
+	<object Name="clau_swingdress" Inherits="clau_basedress">
+		<part Name="Render" DisplayName="swing dress" ColorString="&amp;W" DetailColor="Y"/>
 		<part Name="Commerce" Value="15"/>
-		<part Name="Physics" Weight="2"/>
-		<part Name="Armor" AV="0" DV="2" Heat="4" WornOn="Body"/>
+		<part Name="Armor" AV="0" DV="3" Heat="4" WornOn="Body"/>
 		<tag Name="AlwaysEquipAsArmor"/>
 		<tag Name="Tier" Value="2"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+	<object Name="clau_swingdress_key" Inherits="clau_basedress">
+		<part Name="Render" DisplayName="klaviscist's dress" DetailColor="B"/>
+		<part Name="Armor" AV="1" DV="2" Heat="4"/>
+	</object>
+	<object Name="clau_swingdress_drum" Inherits="clau_basedress">
+		<part Name="Render" DisplayName="percussionist's dress" Tile="items/swingdress_percussion.png" ColorString="&amp;b" DetailColor="Y"/>
+		<part Name="Armor" AV="0" DV="4"/>
+	</object>
+	<object Name="clau_swingdress_horn" Inherits="clau_basedress">
+		<part Name="Render" DisplayName="hornist's dress"/>
+		<part Name="Armor" AV="2" DV="1"/>
 	</object>
 
-	<!-- <object Name="clau_monkdress_gritgate" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by the Barathrumites."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="3"/>
-		<part Name="Armor" AV="2" DV="4" Heat="5" Agility="1" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
+	<!-- Food -->
+	<object Name="clau_marshmallow" Inherits="Snack">
+		<part Name="Render" DisplayName="marshmallow" Tile="Items/shmellow.png" ColorString="&amp;Y" DetailColor="y" RenderString="'"/>
+		<part Name="Description" Short="A meal after one's own hearth."/>
+		<part Name="RulesDescription" Text="Heals when eaten."/>
+		<part Name="Commerce" Value="1"/>
+		<part Name="Physics" Weight="0"/>
+		<part Name="Food" Thirst="0" Healing="10"/>
+		<part Name="PreparedCookingIngredient" type="regenLowtier" charges="1"/>
+		<tag Name="Tier" Value="1"/>
+		<stag Name="Food"/>
+	</object>
+	<object Name="clau_marshmallowkit" Inherits="Food">
+		<part Name="Render" DisplayName="marshmallow kit" Tile="Items/shmellowcan.png" ColorString="&amp;w" DetailColor="y" RenderString=":"/>
+		<part Name="Description" Short="An essential part of any explorer's inventory."/>
+		<part Name="RulesDescription" Text="Heals when eaten."/>
+		<part Name="Commerce" Value="20"/>
+		<part Name="Physics" Weight="1"/>
+		<part Name="PreparedCookingIngredient" type="regenHightier" charges="1"/>
+		<part Name="GeometricHealOnEat" Amount="10-14" Ratio="25" Duration="2"/>
+		<part Name="Examiner" Unknown="can and stick" Complexity="1"/>
+		<part Name="TinkerItem" Bits="00" Ingredient="clau_marshmallow" CanDisassemble="false" CanBuild="true"/>
+		<tag Name="Tier" Value="3"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
+	<object Name="clau_shmellowdisk" Inherits="DataDisk">
+		<part Name="DataDisk" TargetBlueprint="clau_marshmallowkit"/>
 		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 
-	<object Name="clau_monkdress_ezra" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by Daughters of Exile."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="4"/>
-		<part Name="Armor" AV="3" DV="2" Heat="5" Strength="1" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
-	</object>
-
-	<object Name="clau_monkdress_armorer" Inherits="BaseArmor">
-		<part Name="Render" DisplayName="tinkle-monk's dress" Tile="items/swingdress.png" ColorString="&map;W" DetailColor="Y"/>
-		<part Name="Description" Short="Fashionable dress modified by an unknown smith."/>
-		<part Name="Commerce" Value="150"/>
-		<part Name="Physics" Weight="4"/>
-		<part Name="Armor" AV="4" DV="0" Heat="5" Cold="5" WornOn="Body"/>
-		<tag Name="Tier" Value="4"/>
-		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
-	</object> -->
 </objects>

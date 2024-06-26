@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <quests>
 
-	<quest Name="An occurence! Banana Phone">
+	<!-- Single occurrences -->
+	<quest Name="An occurrence! Banana Phone">
+		<!-- Requirements: Ezra, during day hours -->
 	</quest>
-	<quest Name="An occurence! Grave Song">
+	<quest Name="An occurrence! Grave Song">
+		<!-- Requirements: Grave Thoughts quest active -->
 	</quest>
-	<quest Name="An occurence! The Handshake">
+	<quest Name="An occurrence! The Handshake">
+		<!-- Requirements: level 9+, during evening hours -->
 		<step Name="Momentum">
 		</step>
 		<step Name="Fluidity">
 		</step>
 		<step Name="Simplicity">
+		</step>
+	</quest>
+	<quest Name="An occurrence! Waves of Weave">
+		<!-- Requirements: level 4+, salt marshes, during day hours -->
+		<step Name="Find flowers for Tambourine Gal">
+			<text>Your companion needs some personal input from you. She asked you to bring her some flowers.</text>
+		</step>
+		<step Name="Find lah petals for Tambourine Gal">
+			<text>Alternatively, you can bring her lah petals.</text>
+		</step>
+		<step Name="Find microcontrollers for Tambourine Gal">
+			<text>Alternatively, you can get her a set of microcontrollers.</text>
+		</step>
+	</quest>
+	<quest Name="An occurrence! Stargazers">
+		<!-- Requirements: level 19+, hills, during night hours -->
+	</quest>
+	<quest Name="An occurrence! Coral Beach Episode">
+		<!-- Requirements: WIP -->
+		<step Name="Travel to Yd Freehold">
+			<text>Everybody needs a break from time to time. Your companion claims that a "jam session" is required for proper relaxation.</text>
 		</step>
 	</quest>
 </quests>
