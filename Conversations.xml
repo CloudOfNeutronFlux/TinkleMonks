@@ -34,7 +34,7 @@
 			<choice Target="End">*Nod back. You're ready.*</choice>
 		</start>
 
-		<!-- BEY LAH start. Death Awaits Me. This is a capital C Colossal capital M Mess. -->
+		<!-- 0.4 BEY LAH start. Death Awaits Me. This is a capital C Colossal capital M Mess. -->
 		<start ID="Greet_BL_Tree" IfNotZoneName="Bey Lah" IfHaveActiveQuest="Find Eskhind" IfFinishedQuestStep="Find Eskhind~Find Eskhind">
 			<text IfNotHaveState="EskhindSlain">
 				{{C|Knew there was going to be a twist! Or a catch, I guess. Anyway, let's go back to Bey Lah and deliver the news.}}~
@@ -121,7 +121,7 @@
 			<text IfNotFinishedQuest="Love and Fear" IfHaveState="HindrenQuestFullyResolved" IfHindriarch="Esk" IfHaveItem="Sonnet">
 				{{C|Do you still have that Shakespriggan sonnet, friend? We should find its author, now that everything's calmed down somewhat.}}
 			</text>
-			<text IfFinishedQuest="Love and Fear" IfHindriarch="Keh" IfNotHaveState="HindrenQuestFullyResolved">
+			<text IfFinishedQuest="Love and Fear" IfHindriarch="Keh" IfNotHaveState="(HindrenQuestFullyResolved AND HindrenVillageDoomed)">
 				{{C|At least Eskhind and Neelahind are together now. Let's leave, friend.}}
 			</text>
 			<text IfFinishedQuest="Love and Fear" IfFinishedQuestStep="Love and Fear~Rescue an Imperiled Love" IfHaveState="HindrenQuestFullyResolved" IfNotHaveState="HindrenVillageRavaged" IfHindriarch="Keh">
@@ -557,7 +557,7 @@
 		</node>
 		<node ID="Stargazers7" AllowEscape="false">
 			<text>
-				{{w|*Qud's umbral atlas greets your presence once again. The tune's phantom slowly retreats to the periphery of your consciousness as you take a quick glance at your companion. =pronouns.Subjective= =verb:chuckle:afterpronoun=, tears rolling down =pronouns.possessive= cheek.*}}
+				{{w|*Qud's umbral atlas greets your presence once again. The tune's phantom slowly retreats to the periphery of your consciousness.*}}
 
 				{{C|Ahh, I forgot how much I love this song!}}
 
@@ -666,7 +666,7 @@
 		<!-- General start -->
 		<start ID="Greet">
 			<!-- Time-specific -->
-			<text IfTime="270-700" IfNotZoneName="Moon Stair">
+			<text IfTime="270-700" IfZoneLevel="1-10" IfNotZoneName="Moon Stair">
 				{{C|Hey there!}}~
 				{{w|*=pronouns.Subjective= =verb:smile:afterpronoun= and =verb:wave:afterpronoun= at you.*}}~
 				{{C|How are you holding up, =name=?}}~
@@ -693,7 +693,7 @@
 				{{C|I think the Moon's a little bit brighter tonight.}}
 			</text>
 			<!-- Zone-specific -->
-			<text IfNotZoneLevel="1-10" IfNotZoneID="JoppaWorld.22.14.1.0.13,JoppaWorld.67.17.1.1.11" IfNotZoneName="Moon Stair">
+			<text IfNotZoneLevel="1-10" IfNotZoneID="(JoppaWorld.22.14.1.0.13 AND JoppaWorld.67.17.1.1.11)" IfNotZoneName="Moon Stair">
 				{{C|Hold my hand, friend — I'll guide you through the darkness of these caves.}}~
 				{{C|Let's tread carefully, =name=. There are many dangers waiting within the caves of Qud.}}~
 				{{w|*=pronouns.Subjective= =verb:smile:afterpronoun= and =verb:give:afterpronoun= you a firm nod.*}}~
@@ -731,7 +731,8 @@
 			<!-- Grit Gate -->
 			<text IfZoneID="JoppaWorld.22.14.1.0.13">
 				{{C|One of my mentors used to make porridge every morning for us. I wish I'd asked the recipe...}}~
-				{{C|One of the monks said Otho refused them shelter during their stezya. We're taught not to expect hospitality, but I still think that was a rude gesture.}}
+				{{C|You know, there was some gossip going around my monastery about a barathrumite refusing shelter to a monk of ours during their stezya. I'm pretty sure Otho was that barathrumite.}}~
+				{{w|*=pronouns.Subjective==verb:'re:afterpronoun= trying to perform a series of complex hand gestures. Unsuccessfully, it seems.*}}
 			</text>
 			<text IfZoneName="Ezra">
 				{{C|I wonder what Yla's up to these days.}}~
@@ -746,6 +747,11 @@
 				{{C|What do you think is behind the gates?}}~
 				{{C|There's so much history within this place, but it feels off somehow.}}~
 				{{C|Should we visit Ezra while we're here?}}
+			</text>
+			<text IfZoneName="Gyl" IfNotHaveQuest="Tomb of the Eaters">
+				{{C|Do you feel it, friend? This place... It's as if we've been here before. But we haven't, have we?}}
+				{{w|*The tinkle-monk glances around in confusion.*}}
+				{{C|}}
 			</text>
 			<text IfZoneName="Moon Stair">
 				{{C|What a strange place...}}~

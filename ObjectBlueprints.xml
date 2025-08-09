@@ -82,16 +82,17 @@
 
 	<!-- Weapons -->
 	<object Name="clau_keytar" Inherits="BaseCudgel">
-		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;B" DetailColor="Y"/>
-		<part Name="Description" Short="A body of plastic with an array of colorful keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down rivals."/>
+		<part Name="Render" DisplayName="{{chaotic|keytar}}" Tile="items/keytar.png" ColorString="&amp;b" DetailColor="Y"/>
+		<part Name="Description" Short="A body of carbide with an array of colorful keys. With each press, the fire of one's soul is actualised into reality to embolden comrades and strike down rivals."/>
+		<part Name="RulesDescription" Text="This weapon uses the wielder's Ego modifier instead of Strength for calculating melee penetration bonus."/>
 		<part Name="Commerce" Value="120"/>
-		<part Name="Physics" Weight="8" FlameTemperature="9999" VaporTemperature="9999" UsesTwoSlots="true"/>
+		<part Name="Physics" Weight="8" UsesTwoSlots="true"/>
 		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d6" Skill="Cudgel" Stat="Ego"/>
 		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="f" ShowShotsPerAction="false" NoWildfire="true" MaxRange="3" ShotsPerAction="4" AmmoPerAction="1" ShotsPerAnimation="4" WeaponAccuracy="5"/>
-		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="ProjectileFlamethrower" />
+		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="clau_projectileKeytar"/>
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
-		<part Name="ElementalDamage" Damage="2d6" Attributes="Heat"/>
-		<part Name="Examiner" Unknown="strange case" Complexity="4"/>
+		<part Name="ElementalDamage" Damage="2d4" Attributes="Heat"/>
+		<part Name="Examiner" Unknown="UnknownRifle" Complexity="4"/>
 		<part Name="TinkerItem" Bits="0004" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="TurretName" Value="{{chaotic|keytar}} turret"/>
 		<tag Name="Mods" Value="CudgelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
@@ -102,18 +103,42 @@
 		<tag Name="DynamicObjectTable:Guns"/>
 		<xtagGrammar Proper="true"/>
 	</object>
+	<object Name="clau_projectileKeytar" Inherits="TemporaryProjectile">
+		<part Name="Render" DisplayName="{{fiery|fiery chord}}" ColorString="&amp;R"/>
+		<part Name="Projectile" BasePenetration="15" BaseDamage="1d4" Attributes="Heat Fire" ColorString="&amp;R" PassByVerb="ring"/>
+		<part Name="TemperatureOnHit" Amount="2d20" Max="false" OnWielderHit="true"/>
+    	<part Name="TemperatureOnEntering" Amount="4d20" Max="false" OnWielderHit="true"/>
+	</object>
+
+	<object Name="clau_keytarUpgrade" Inherits="clau_keytar">
+		<part Name="Render" DisplayName="{{c|tuned}} {{moon|keytar}}" Tile="items/keytarUpgrade.png" ColorString="&amp;B"/>
+		<part Name="MeleeWeapon" MaxStrengthBonus="6" BaseDamage="2d6"/>
+		<part Name="MissileWeapon" ShotsPerAction="6" ShotsPerAnimation="6"/>
+		<part Name="ElementalDamage" Damage="2d4+2"/>
+		<part Name="TinkerItem" CanBuild="false"/>
+		<tag Name="Tier" Value="6"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
+	</object>
 
 	<object Name="clau_tambourine" Inherits="BaseCudgel">
-		<part Name="Render" DisplayName="{{w|tambourine}}" Tile="items/tambourine.png" ColorString="&amp;w" DetailColor="Y"/>
-		<part Name="Description" Short="A circle of wood, metal jingles slotted into its frame with care and precision. As one moves their hand, the tambourine sings its rainy song."/>
+		<part Name="Render" DisplayName="{{w|tambourine}}" Tile="items/tambourine.png" ColorString="&amp;w" DetailColor="y"/>
+		<part Name="Description" Short="A circle of wood. Metal jingles were slotted into the frame with care and precision. As one moves their hand, the tambourine sings its rainy song."/>
 		<part Name="Commerce" Value="100"/>
-		<part Name="Physics" Weight="0" FlameTemperature="9999" VaporTemperature="9999"/>
+		<part Name="Physics" Weight="0"/>
 		<part Name="MeleeWeapon" MaxStrengthBonus="5" BaseDamage="1d4" Skill="Cudgel"/>
-		<part Name="ElementalDamage" Damage="2d4+4" Attributes="Cold"/>
+		<part Name="ElementalDamage" Damage="1d4" Attributes="Cold"/>
 		<tag Name="Tier" Value="4"/>
 		<tag Name="Hitsound" Value="meleeTier4_4"/>
 		<tag Name="AlwaysEquipAsWeapon"/>
 		<xtagGrammar Proper="true"/>
+	</object>
+
+	<object Name="clau_tambourineUpgrade" Inherits="clau_tambourine">
+		<part Name="Render" DisplayName="{{c|tuned}} {{w-w-w-w-Y-w-w sequence|tambourine}}" Tile="items/tambourineUpgrade.png" ColorString="&amp;w" DetailColor="Y"/>
+		<part Name="MeleeWeapon" MaxStrengthBonus="6" BaseDamage="2d4"/>
+		<part Name="ElementalDamage" Damage="2d4"/>
+		<tag Name="Tier" Value="6"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 
 	<object Name="clau_huntinghorn" Inherits="BaseCudgel">
@@ -121,12 +146,12 @@
 		<part Name="Description" Short="A blend of wood and metal forms a hollow tube. It waits for a worthy soul to breath life into it, for without one the tube will forever be incomplete."/>
 		<part Name="Commerce" Value="50"/>
 		<part Name="Physics" Weight="30" UsesTwoSlots="true"/>
-		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d4+2" Skill="Cudgel" Stat="Strength"/>
-		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="sm" NoWildfire="true" MaxRange="50" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="20"/>
-		<part Name="CooldownAmmoLoader" Cooldown="2d3" Readout="true"/>
+		<part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d4" Skill="Cudgel" Stat="Strength"/>
+		<part Name="MissileWeapon" Skill="HeavyWeapons" AmmoChar="sm" NoWildfire="true" MaxRange="50" ShotsPerAction="1" AmmoPerAction="1" ShotsPerAnimation="1" WeaponAccuracy="10"/>
+		<part Name="CooldownAmmoLoader" Cooldown="3" Readout="true"/>
 		<part Name="EnergyAmmoLoader" ChargeUse="400" ProjectileObject="clau_ProjectileHuntingHorn"/>
     	<part Name="EnergyCellSocket" SlotType="EnergyCell" SlottedType="Chem Cell" ChanceSlotted="100"/>
-		<part Name="Examiner" Unknown="big tube" Complexity="4"/>
+		<part Name="Examiner" Unknown="UnknownStrangeTubes" Complexity="4"/>
 		<part Name="TinkerItem" Bits="0006" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="TurretName" Value="{{ghostly|haunting horn}} turret"/>
 		<tag Name="Mods" Value="CudgelMods,WeaponMods,MissileWeaponMods,FirearmMods,HeavyWeaponMods,CommonMods,ElectronicsMods"/>
@@ -136,11 +161,19 @@
 		<tag Name="MissileFireSound" Value="hauntinghorn"/>
 		<xtagGrammar Proper="true"/>
 	</object>
-
 	<object Name="clau_ProjectileHuntingHorn" Inherits="TemporaryProjectile">
 		<part Name="Render" DisplayName="{{ghostly|haunting tune}}" ColorString="&amp;B"/>
 		<part Name="Projectile" BasePenetration="6" BaseDamage="2d4" ColorString="&amp;B" PassByVerb="echo"/>
-		<part Name="BlastOnHit" Force="3"/>
+		<part Name="BlastOnHit" Force="1"/>
+	</object>
+
+	<object Name="clau_huntinghornUpgrade" Inherits="clau_huntinghorn">
+		<part Name="Render" DisplayName="{{c|tuned}} {{w|haunting}} {{w-W-W-w|horn}}" Tile="items/huntinghornUpgrade.png" DetailColor="W"/>
+		<part Name="MeleeWeapon" PenBonus="2" MaxStrengthBonus="7" BaseDamage="2d4+2"/>
+		<part Name="MissileWeapon" ShotsPerAction="2" ShotsPerAnimation="2" WeaponAccuracy="5"/>
+		<part Name="TinkerItem" CanBuild="false"/>
+		<tag Name="Tier" Value="6"/>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"/>
 	</object>
 
 	<object Name="clau_drumstick" Inherits="Item">
@@ -149,7 +182,7 @@
 		<part Name="Commerce" Value="10"/>
 		<part Name="Physics" Weight="1"/>
 		<part Name="ThrownWeapon" Damage="2d6" Penetration="9"/>
-		<part Name="Examiner" Unknown="stick" Complexity="2"/>
+		<part Name="Examiner" Unknown="UnknownStrangeTubes" Complexity="2"/>
 		<part Name="TinkerItem" Bits="00" CanDisassemble="true" CanBuild="true"/>
 		<tag Name="Mods" Value="CommonMods,ThrownWeaponMods"/>
 		<tag Name="Tier" Value="2"/>
